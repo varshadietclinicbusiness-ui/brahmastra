@@ -27,10 +27,10 @@
         "$value": "{color.kajal.950}"
       },
       "muted": {
-        "$value": "{color.kajal.700}"
+        "$value": "{color.mitti.800}"
       },
       "subtle": {
-        "$value": "{color.kajal.600}"
+        "$value": "{color.mitti.700}"
       },
       "disabled": {
         "$value": "{color.mitti.400}"

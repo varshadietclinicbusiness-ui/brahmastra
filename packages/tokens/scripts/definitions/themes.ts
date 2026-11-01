@@ -96,7 +96,7 @@ function neutral(mode: Mode): SemanticTree {
         ? { default: n(950), muted: n(700), subtle: n(600), disabled: n(400), inverse: n(50), link: c("neel", 600) }
         : { default: n(50), muted: n(300), subtle: n(400), disabled: n(600), inverse: n(950), link: c("neel", 300) },
       border: light
-        ? { subtle: n(100), default: n(200), strong: n(500), focus: c("neel", 500), control: TRANSPARENT }
+        ? { subtle: n(100), default: n(200), strong: n(600), focus: c("neel", 500), control: TRANSPARENT }
         : { subtle: n(900), default: n(800), strong: n(500), focus: c("neel", 300), control: TRANSPARENT },
       accent: light
         ? { solid: n(950), "solid-hover": n(800), "solid-active": n(700), subtle: n(100), "subtle-hover": n(200), fg: n(950), border: n(300), "on-solid": WHITE }
@@ -122,7 +122,7 @@ function painted(mode: Mode): SemanticTree {
         ? { canvas: m(100), surface: m(50), raised: WHITE, sunken: m(200), inverse: n(950), overlay: "{color.scrim}" }
         : { canvas: n(950), surface: n(900), raised: n(800), sunken: n(950), inverse: m(50), overlay: "{color.scrim}" },
       fg: light
-        ? { default: n(950), muted: n(700), subtle: n(600), disabled: m(400), inverse: m(50), link: c("neel", 700) }
+        ? { default: n(950), muted: m(800), subtle: m(700), disabled: m(400), inverse: m(50), link: c("neel", 700) }
         : { default: m(50), muted: m(300), subtle: m(400), disabled: n(600), inverse: n(950), link: c("haldi", 300) },
       border: light
         ? { subtle: m(300), default: n(950), strong: n(950), focus: c("neel", 600), control: n(950) }

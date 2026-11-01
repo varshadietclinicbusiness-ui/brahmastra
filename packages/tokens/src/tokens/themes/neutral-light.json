@@ -50,7 +50,7 @@
         "$value": "{color.kajal.200}"
       },
       "strong": {
-        "$value": "{color.kajal.500}"
+        "$value": "{color.kajal.600}"
       },
       "focus": {
         "$value": "{color.neel.500}"

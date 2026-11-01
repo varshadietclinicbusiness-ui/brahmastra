@@ -51,9 +51,17 @@ function palette() {
 
   color.white = { $value: "#ffffff" };
   // The scrim behind modals and sheets: kajal-950 at 60%.
-  const ink = toSrgb({ mode: "oklch", l: L_NEUTRAL[10]!, c: NEUTRALS[0]!.chroma, h: NEUTRALS[0]!.hue });
+  const ink = toSrgb({ mode: "oklch", l: L_NEUTRAL[10]!, c: NEUTRALS[0]!.chroma * C_NEUTRAL[10]!, h: NEUTRALS[0]!.hue });
   color.scrim = { $value: formatHex8({ ...ink, alpha: 0.6 }), $description: "Overlay behind modals and sheets." };
   color.transparent = { $value: "#00000000", $description: "Lets a theme switch a stroke off without changing the component." };
+  // Overlay alphas (from the workshop system): ink and white at fixed opacities,
+  // for scrims, image protection gradients and pressed overlays on photos.
+  const white = { mode: "rgb" as const, r: 1, g: 1, b: 1 };
+  for (const [name, base] of [["ink-alpha", ink], ["white-alpha", white]] as const) {
+    const scale: Record<string, unknown> = { $description: `${name === "ink-alpha" ? "kajal-950" : "white"} at fixed opacities.` };
+    for (const a of [8, 16, 25, 60, 75, 90]) scale[a] = { $value: formatHex8({ ...base, alpha: a / 100 }) };
+    color[name] = scale;
+  }
 
   return { color };
 }
