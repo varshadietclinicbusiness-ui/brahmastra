@@ -54,6 +54,9 @@
       },
       "focus": {
         "$value": "{color.haldi.400}"
+      },
+      "control": {
+        "$value": "{color.mitti.50}"
       }
     },
     "accent": {

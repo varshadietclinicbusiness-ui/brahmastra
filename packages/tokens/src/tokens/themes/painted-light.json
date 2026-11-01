@@ -54,6 +54,9 @@
       },
       "focus": {
         "$value": "{color.neel.600}"
+      },
+      "control": {
+        "$value": "{color.kajal.950}"
       }
     },
     "accent": {

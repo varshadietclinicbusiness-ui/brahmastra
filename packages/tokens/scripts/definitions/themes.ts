@@ -14,6 +14,8 @@ export const MODES: Mode[] = ["light", "dark"];
 
 const c = (family: string, step: number | string) => `{color.${family}.${step}}`;
 const WHITE = "{color.white}";
+// border.control outlines solid controls: off in Neutral, ink in Painted (the hand-painted sign look).
+const TRANSPARENT = "{color.transparent}";
 const INK = c("kajal", 950);
 
 /** The 8 roles every intent (accent, success, warning, danger, info) exposes. */
@@ -94,8 +96,8 @@ function neutral(mode: Mode): SemanticTree {
         ? { default: n(950), muted: n(700), subtle: n(600), disabled: n(400), inverse: n(50), link: c("neel", 600) }
         : { default: n(50), muted: n(300), subtle: n(400), disabled: n(600), inverse: n(950), link: c("neel", 300) },
       border: light
-        ? { subtle: n(100), default: n(200), strong: n(500), focus: c("neel", 500) }
-        : { subtle: n(900), default: n(800), strong: n(500), focus: c("neel", 300) },
+        ? { subtle: n(100), default: n(200), strong: n(500), focus: c("neel", 500), control: TRANSPARENT }
+        : { subtle: n(900), default: n(800), strong: n(500), focus: c("neel", 300), control: TRANSPARENT },
       accent: light
         ? { solid: n(950), "solid-hover": n(800), "solid-active": n(700), subtle: n(100), "subtle-hover": n(200), fg: n(950), border: n(300), "on-solid": WHITE }
         : { solid: n(50), "solid-hover": n(200), "solid-active": n(300), subtle: n(800), "subtle-hover": n(700), fg: n(50), border: n(600), "on-solid": n(950) },
@@ -123,8 +125,8 @@ function painted(mode: Mode): SemanticTree {
         ? { default: n(950), muted: n(700), subtle: n(600), disabled: m(400), inverse: m(50), link: c("neel", 700) }
         : { default: m(50), muted: m(300), subtle: m(400), disabled: n(600), inverse: n(950), link: c("haldi", 300) },
       border: light
-        ? { subtle: m(300), default: n(950), strong: n(950), focus: c("neel", 600) }
-        : { subtle: n(800), default: m(200), strong: m(50), focus: c("haldi", 400) },
+        ? { subtle: m(300), default: n(950), strong: n(950), focus: c("neel", 600), control: n(950) }
+        : { subtle: n(800), default: m(200), strong: m(50), focus: c("haldi", 400), control: m(50) },
       accent: chromatic("rani", mode),
       ...statuses(mode),
     },

@@ -1,7 +1,7 @@
 # 0004 · Typography and mobile-first sizing
 
 - **Date:** 2026-11-01
-- **Status:** Accepted
+- **Status:** Accepted. The font choice and the 17-style scale were replaced by [0005](0005-two-typefaces.md); the mobile sizing rules below still apply.
 
 ## Decision
 

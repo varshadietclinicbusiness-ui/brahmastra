@@ -53,6 +53,7 @@ function palette() {
   // The scrim behind modals and sheets: kajal-950 at 60%.
   const ink = toSrgb({ mode: "oklch", l: L_NEUTRAL[10]!, c: NEUTRALS[0]!.chroma, h: NEUTRALS[0]!.hue });
   color.scrim = { $value: formatHex8({ ...ink, alpha: 0.6 }), $description: "Overlay behind modals and sheets." };
+  color.transparent = { $value: "#00000000", $description: "Lets a theme switch a stroke off without changing the component." };
 
   return { color };
 }

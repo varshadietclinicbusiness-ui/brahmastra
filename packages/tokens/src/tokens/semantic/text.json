@@ -5,61 +5,67 @@
       "$description": "Hero moments. One per screen, at most.",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.display}"
+        "$value": "{font.family.heading}"
       },
       "size": {
         "$type": "dimension",
-        "$value": "{font.size.64}"
+        "$value": "{font.size.72}"
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.tight}"
+        "$value": 1.056
       },
       "weight": {
         "$type": "fontWeight",
-        "$value": "{font.weight.extrabold}"
+        "$value": "{font.weight.bold}"
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.tighter}"
+        "$value": {
+          "value": -0.035,
+          "unit": "em"
+        }
       }
     },
     "display-lg": {
       "$description": "Landing headlines.",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.display}"
+        "$value": "{font.family.heading}"
       },
       "size": {
         "$type": "dimension",
-        "$value": "{font.size.48}"
+        "$value": "{font.size.56}"
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.tight}"
+        "$value": 1.071
       },
       "weight": {
         "$type": "fontWeight",
-        "$value": "{font.weight.extrabold}"
+        "$value": "{font.weight.bold}"
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.tighter}"
+        "$value": {
+          "value": -0.03,
+          "unit": "em"
+        }
       }
     },
     "display-md": {
-      "$description": "Section openers on marketing pages.",
+      "$description": "Section openers on marketing and docs pages.",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.display}"
+        "$value": "{font.family.heading}"
       },
       "size": {
         "$type": "dimension",
-        "$value": "{font.size.40}"
+        "$value": "{font.size.44}"
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.tight}"
+        "$value": 1.091
       },
       "weight": {
         "$type": "fontWeight",
@@ -67,37 +73,43 @@
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.tighter}"
+        "$value": {
+          "value": -0.025,
+          "unit": "em"
+        }
       }
     },
     "heading-xl": {
-      "$description": "Page title on desktop.",
+      "$description": "Page title on desktop; hero title on mobile.",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.sans}"
+        "$value": "{font.family.heading}"
       },
       "size": {
         "$type": "dimension",
-        "$value": "{font.size.32}"
+        "$value": "{font.size.36}"
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.snug}"
+        "$value": 1.167
       },
       "weight": {
         "$type": "fontWeight",
-        "$value": "{font.weight.bold}"
+        "$value": "{font.weight.semibold}"
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.tight}"
+        "$value": {
+          "value": -0.02,
+          "unit": "em"
+        }
       }
     },
     "heading-lg": {
-      "$description": "Page title on mobile.",
+      "$description": "Page title on mobile (large app bar).",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.sans}"
+        "$value": "{font.family.heading}"
       },
       "size": {
         "$type": "dimension",
@@ -105,30 +117,33 @@
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.snug}"
+        "$value": 1.214
       },
       "weight": {
         "$type": "fontWeight",
-        "$value": "{font.weight.bold}"
+        "$value": "{font.weight.semibold}"
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.tight}"
+        "$value": {
+          "value": -0.015,
+          "unit": "em"
+        }
       }
     },
     "heading-md": {
       "$description": "Section title.",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.sans}"
+        "$value": "{font.family.heading}"
       },
       "size": {
         "$type": "dimension",
-        "$value": "{font.size.24}"
+        "$value": "{font.size.22}"
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.snug}"
+        "$value": 1.273
       },
       "weight": {
         "$type": "fontWeight",
@@ -136,22 +151,25 @@
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.tight}"
+        "$value": {
+          "value": -0.01,
+          "unit": "em"
+        }
       }
     },
     "heading-sm": {
-      "$description": "Card and sheet titles.",
+      "$description": "Card, sheet and app-bar titles.",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.sans}"
+        "$value": "{font.family.heading}"
       },
       "size": {
         "$type": "dimension",
-        "$value": "{font.size.20}"
+        "$value": "{font.size.18}"
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.snug}"
+        "$value": 1.333
       },
       "weight": {
         "$type": "fontWeight",
@@ -159,60 +177,17 @@
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.tight}"
+        "$value": {
+          "value": -0.005,
+          "unit": "em"
+        }
       }
     },
     "heading-xs": {
       "$description": "Group labels, list headers.",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.sans}"
-      },
-      "size": {
-        "$type": "dimension",
-        "$value": "{font.size.18}"
-      },
-      "line-height": {
-        "$type": "number",
-        "$value": "{font.line-height.snug}"
-      },
-      "weight": {
-        "$type": "fontWeight",
-        "$value": "{font.weight.semibold}"
-      },
-      "tracking": {
-        "$type": "dimension",
-        "$value": "{font.tracking.normal}"
-      }
-    },
-    "body-lg": {
-      "$description": "Long-form reading.",
-      "family": {
-        "$type": "fontFamily",
-        "$value": "{font.family.sans}"
-      },
-      "size": {
-        "$type": "dimension",
-        "$value": "{font.size.18}"
-      },
-      "line-height": {
-        "$type": "number",
-        "$value": "{font.line-height.relaxed}"
-      },
-      "weight": {
-        "$type": "fontWeight",
-        "$value": "{font.weight.regular}"
-      },
-      "tracking": {
-        "$type": "dimension",
-        "$value": "{font.tracking.normal}"
-      }
-    },
-    "body-md": {
-      "$description": "Default body text. Never smaller in inputs — iOS zooms below 16px.",
-      "family": {
-        "$type": "fontFamily",
-        "$value": "{font.family.sans}"
+        "$value": "{font.family.heading}"
       },
       "size": {
         "$type": "dimension",
@@ -220,7 +195,33 @@
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.normal}"
+        "$value": 1.375
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.semibold}"
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        }
+      }
+    },
+    "body-lg": {
+      "$description": "Long-form reading, intros.",
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.family.body}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.18}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.556
       },
       "weight": {
         "$type": "fontWeight",
@@ -228,14 +229,43 @@
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.normal}"
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        }
+      }
+    },
+    "body-md": {
+      "$description": "Default body text. Never smaller in inputs: iOS zooms below 16px.",
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.family.body}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.16}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.5
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.regular}"
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        }
       }
     },
     "body-sm": {
       "$description": "Secondary text, dense lists.",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.sans}"
+        "$value": "{font.family.body}"
       },
       "size": {
         "$type": "dimension",
@@ -243,7 +273,7 @@
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.normal}"
+        "$value": 1.429
       },
       "weight": {
         "$type": "fontWeight",
@@ -251,60 +281,17 @@
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.normal}"
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        }
       }
     },
-    "label-lg": {
-      "$description": "Large buttons, tab bar labels on tablets.",
+    "body-xs": {
+      "$description": "Helper text, timestamps, captions.",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.sans}"
-      },
-      "size": {
-        "$type": "dimension",
-        "$value": "{font.size.16}"
-      },
-      "line-height": {
-        "$type": "number",
-        "$value": "{font.line-height.snug}"
-      },
-      "weight": {
-        "$type": "fontWeight",
-        "$value": "{font.weight.medium}"
-      },
-      "tracking": {
-        "$type": "dimension",
-        "$value": "{font.tracking.normal}"
-      }
-    },
-    "label-md": {
-      "$description": "Buttons, form labels, tabs.",
-      "family": {
-        "$type": "fontFamily",
-        "$value": "{font.family.sans}"
-      },
-      "size": {
-        "$type": "dimension",
-        "$value": "{font.size.14}"
-      },
-      "line-height": {
-        "$type": "number",
-        "$value": "{font.line-height.snug}"
-      },
-      "weight": {
-        "$type": "fontWeight",
-        "$value": "{font.weight.medium}"
-      },
-      "tracking": {
-        "$type": "dimension",
-        "$value": "{font.tracking.normal}"
-      }
-    },
-    "label-sm": {
-      "$description": "Badges, chips, bottom-nav labels.",
-      "family": {
-        "$type": "fontFamily",
-        "$value": "{font.family.sans}"
+        "$value": "{font.family.body}"
       },
       "size": {
         "$type": "dimension",
@@ -312,30 +299,7 @@
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.snug}"
-      },
-      "weight": {
-        "$type": "fontWeight",
-        "$value": "{font.weight.medium}"
-      },
-      "tracking": {
-        "$type": "dimension",
-        "$value": "{font.tracking.normal}"
-      }
-    },
-    "caption": {
-      "$description": "Helper text, timestamps.",
-      "family": {
-        "$type": "fontFamily",
-        "$value": "{font.family.sans}"
-      },
-      "size": {
-        "$type": "dimension",
-        "$value": "{font.size.12}"
-      },
-      "line-height": {
-        "$type": "number",
-        "$value": "{font.line-height.normal}"
+        "$value": 1.333
       },
       "weight": {
         "$type": "fontWeight",
@@ -343,22 +307,25 @@
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.normal}"
+        "$value": {
+          "value": 0.005,
+          "unit": "em"
+        }
       }
     },
-    "overline": {
-      "$description": "Eyebrow labels. Use with uppercase.",
+    "label-xl": {
+      "$description": "OTP digits, prices, stat numbers.",
       "family": {
         "$type": "fontFamily",
-        "$value": "{font.family.sans}"
+        "$value": "{font.family.body}"
       },
       "size": {
         "$type": "dimension",
-        "$value": "{font.size.12}"
+        "$value": "{font.size.22}"
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.snug}"
+        "$value": 1.273
       },
       "weight": {
         "$type": "fontWeight",
@@ -366,10 +333,117 @@
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.wide}"
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        }
       }
     },
-    "code": {
+    "label-lg": {
+      "$description": "M and L buttons, field values that act like labels.",
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.family.body}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.16}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.25
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.semibold}"
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        }
+      }
+    },
+    "label-md": {
+      "$description": "S buttons, form labels, tabs, chips.",
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.family.body}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.14}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.286
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.semibold}"
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        }
+      }
+    },
+    "label-sm": {
+      "$description": "Badges, counters, tab-bar labels.",
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.family.body}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.12}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.333
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.semibold}"
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.005,
+          "unit": "em"
+        }
+      }
+    },
+    "overline": {
+      "$description": "Eyebrow labels. Use with uppercase.",
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.family.body}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.11}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.455
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.semibold}"
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.08,
+          "unit": "em"
+        }
+      }
+    },
+    "code-md": {
       "$description": "Inline and block code.",
       "family": {
         "$type": "fontFamily",
@@ -381,7 +455,7 @@
       },
       "line-height": {
         "$type": "number",
-        "$value": "{font.line-height.normal}"
+        "$value": 1.429
       },
       "weight": {
         "$type": "fontWeight",
@@ -389,7 +463,36 @@
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "{font.tracking.normal}"
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        }
+      }
+    },
+    "code-sm": {
+      "$description": "Token names and data-slot names in docs.",
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.family.mono}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.12}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.333
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.regular}"
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        }
       }
     }
   }

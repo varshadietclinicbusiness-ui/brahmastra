@@ -2,54 +2,194 @@
   "font": {
     "family": {
       "$type": "fontFamily",
-      "sans": {
-        "$value": ["Host Grotesk", "Anek Devanagari", "Anek Tamil", "Anek Bangla", "Anek Telugu", "Anek Kannada", "Anek Malayalam", "Anek Gujarati", "Anek Gurmukhi", "Anek Odia", "system-ui", "sans-serif"],
-        "$description": "Host Grotesk for Latin; the Anek family (Ek Type, Mumbai) picks up every Indic script glyph-by-glyph."
+      "heading": {
+        "$value": [
+          "Host Grotesk",
+          "Anek Devanagari",
+          "Anek Tamil",
+          "Anek Bangla",
+          "Anek Telugu",
+          "Anek Kannada",
+          "Anek Malayalam",
+          "Anek Gujarati",
+          "Anek Gurmukhi",
+          "Anek Odia",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "Headings only (display-*, heading-*). Indic glyphs fall through to the Anek family (Ek Type, Mumbai)."
       },
-      "display": {
-        "$value": ["Host Grotesk", "Anek Devanagari", "Anek Tamil", "Anek Bangla", "system-ui", "sans-serif"]
+      "heading-indic": {
+        "$value": [
+          "Anek Devanagari",
+          "Anek Tamil",
+          "Anek Bangla",
+          "Anek Telugu",
+          "Anek Kannada",
+          "Anek Malayalam",
+          "Anek Gujarati",
+          "Anek Gurmukhi",
+          "Anek Odia",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "Heading face for pages that are fully in an Indic language."
+      },
+      "body": {
+        "$value": [
+          "Mukta",
+          "Anek Tamil",
+          "Anek Bangla",
+          "Anek Telugu",
+          "Anek Kannada",
+          "Anek Malayalam",
+          "Anek Gujarati",
+          "Anek Gurmukhi",
+          "Anek Odia",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "Body and every UI string. Mukta (Ek Type) draws Latin and Devanagari together, so mixed Hindi-English text shares one baseline."
       },
       "mono": {
-        "$value": ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"]
+        "$value": [
+          "JetBrains Mono",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "monospace"
+        ]
       }
     },
     "weight": {
       "$type": "fontWeight",
-      "regular": { "$value": 400 },
-      "medium": { "$value": 500 },
-      "semibold": { "$value": 600 },
-      "bold": { "$value": 700 },
-      "extrabold": { "$value": 800 }
+      "regular": {
+        "$value": 400
+      },
+      "medium": {
+        "$value": 500
+      },
+      "semibold": {
+        "$value": 600
+      },
+      "bold": {
+        "$value": 700
+      },
+      "extrabold": {
+        "$value": 800
+      }
     },
     "size": {
+      "11": {
+        "$value": {
+          "value": 11,
+          "unit": "px"
+        }
+      },
+      "12": {
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        }
+      },
+      "14": {
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        }
+      },
+      "16": {
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "18": {
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        }
+      },
+      "22": {
+        "$value": {
+          "value": 22,
+          "unit": "px"
+        }
+      },
+      "28": {
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        }
+      },
+      "36": {
+        "$value": {
+          "value": 36,
+          "unit": "px"
+        }
+      },
+      "44": {
+        "$value": {
+          "value": 44,
+          "unit": "px"
+        }
+      },
+      "56": {
+        "$value": {
+          "value": 56,
+          "unit": "px"
+        }
+      },
+      "72": {
+        "$value": {
+          "value": 72,
+          "unit": "px"
+        }
+      },
       "$type": "dimension",
-      "$description": "Authored in px to match Figma; shipped as rem so text respects the reader's font-size setting.",
-      "12": { "$value": { "value": 12, "unit": "px" } },
-      "14": { "$value": { "value": 14, "unit": "px" } },
-      "16": { "$value": { "value": 16, "unit": "px" } },
-      "18": { "$value": { "value": 18, "unit": "px" } },
-      "20": { "$value": { "value": 20, "unit": "px" } },
-      "24": { "$value": { "value": 24, "unit": "px" } },
-      "28": { "$value": { "value": 28, "unit": "px" } },
-      "32": { "$value": { "value": 32, "unit": "px" } },
-      "40": { "$value": { "value": 40, "unit": "px" } },
-      "48": { "$value": { "value": 48, "unit": "px" } },
-      "64": { "$value": { "value": 64, "unit": "px" } },
-      "80": { "$value": { "value": 80, "unit": "px" } }
+      "$description": "Authored in px to match Figma; shipped as rem so text respects the reader's font-size setting."
     },
     "line-height": {
       "$type": "number",
-      "tight": { "$value": 1.1 },
-      "snug": { "$value": 1.3 },
-      "normal": { "$value": 1.5 },
-      "relaxed": { "$value": 1.65 }
+      "tight": {
+        "$value": 1.1
+      },
+      "snug": {
+        "$value": 1.3
+      },
+      "normal": {
+        "$value": 1.5
+      },
+      "relaxed": {
+        "$value": 1.65
+      }
     },
     "tracking": {
       "$type": "dimension",
-      "tighter": { "$value": { "value": -0.03, "unit": "em" } },
-      "tight": { "$value": { "value": -0.015, "unit": "em" } },
-      "normal": { "$value": { "value": 0, "unit": "em" } },
-      "wide": { "$value": { "value": 0.06, "unit": "em" } }
+      "tighter": {
+        "$value": {
+          "value": -0.03,
+          "unit": "em"
+        }
+      },
+      "tight": {
+        "$value": {
+          "value": -0.015,
+          "unit": "em"
+        }
+      },
+      "normal": {
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        }
+      },
+      "wide": {
+        "$value": {
+          "value": 0.06,
+          "unit": "em"
+        }
+      }
     }
   }
 }

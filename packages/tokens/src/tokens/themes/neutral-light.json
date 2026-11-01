@@ -54,6 +54,9 @@
       },
       "focus": {
         "$value": "{color.neel.500}"
+      },
+      "control": {
+        "$value": "{color.transparent}"
       }
     },
     "accent": {

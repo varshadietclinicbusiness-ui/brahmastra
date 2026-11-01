@@ -918,6 +918,10 @@
     "scrim": {
       "$value": "#0f121799",
       "$description": "Overlay behind modals and sheets."
+    },
+    "transparent": {
+      "$value": "#00000000",
+      "$description": "Lets a theme switch a stroke off without changing the component."
     }
   }
 }
