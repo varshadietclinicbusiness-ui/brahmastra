@@ -1,0 +1,69 @@
+{
+  "space": {
+    "$type": "dimension",
+    "$description": "Spacing scale on a 4px grid, with 2px and 6px for tight optical adjustments. Key = pixels.",
+    "0": { "$value": { "value": 0, "unit": "px" } },
+    "2": { "$value": { "value": 2, "unit": "px" } },
+    "4": { "$value": { "value": 4, "unit": "px" } },
+    "6": { "$value": { "value": 6, "unit": "px" } },
+    "8": { "$value": { "value": 8, "unit": "px" } },
+    "12": { "$value": { "value": 12, "unit": "px" } },
+    "16": { "$value": { "value": 16, "unit": "px" } },
+    "20": { "$value": { "value": 20, "unit": "px" } },
+    "24": { "$value": { "value": 24, "unit": "px" } },
+    "32": { "$value": { "value": 32, "unit": "px" } },
+    "40": { "$value": { "value": 40, "unit": "px" } },
+    "48": { "$value": { "value": 48, "unit": "px" } },
+    "64": { "$value": { "value": 64, "unit": "px" } },
+    "80": { "$value": { "value": 80, "unit": "px" } },
+    "96": { "$value": { "value": 96, "unit": "px" } },
+    "128": { "$value": { "value": 128, "unit": "px" } }
+  },
+  "radius": {
+    "$type": "dimension",
+    "$description": "Corner radii. Key = pixels; `full` makes a capsule.",
+    "0": { "$value": { "value": 0, "unit": "px" } },
+    "2": { "$value": { "value": 2, "unit": "px" } },
+    "4": { "$value": { "value": 4, "unit": "px" } },
+    "6": { "$value": { "value": 6, "unit": "px" } },
+    "8": { "$value": { "value": 8, "unit": "px" } },
+    "12": { "$value": { "value": 12, "unit": "px" } },
+    "16": { "$value": { "value": 16, "unit": "px" } },
+    "20": { "$value": { "value": 20, "unit": "px" } },
+    "24": { "$value": { "value": 24, "unit": "px" } },
+    "32": { "$value": { "value": 32, "unit": "px" } },
+    "full": { "$value": { "value": 9999, "unit": "px" } }
+  },
+  "border-width": {
+    "$type": "dimension",
+    "1": { "$value": { "value": 1, "unit": "px" } },
+    "2": { "$value": { "value": 2, "unit": "px" } },
+    "4": { "$value": { "value": 4, "unit": "px" } }
+  },
+  "size": {
+    "$type": "dimension",
+    "control": {
+      "$description": "Control heights. Medium is 44px — the minimum comfortable touch target on a phone.",
+      "sm": { "$value": { "value": 36, "unit": "px" } },
+      "md": { "$value": { "value": 44, "unit": "px" } },
+      "lg": { "$value": { "value": 52, "unit": "px" } }
+    },
+    "touch-target": {
+      "$value": { "value": 44, "unit": "px" },
+      "$description": "Every interactive element's hit area is at least this, even when it looks smaller."
+    },
+    "icon": {
+      "sm": { "$value": { "value": 16, "unit": "px" } },
+      "md": { "$value": { "value": 20, "unit": "px" } },
+      "lg": { "$value": { "value": 24, "unit": "px" } }
+    }
+  },
+  "breakpoint": {
+    "$type": "dimension",
+    "$description": "Mobile-first: styles apply from this width up.",
+    "sm": { "$value": { "value": 640, "unit": "px" } },
+    "md": { "$value": { "value": 768, "unit": "px" } },
+    "lg": { "$value": { "value": 1024, "unit": "px" } },
+    "xl": { "$value": { "value": 1280, "unit": "px" } }
+  }
+}

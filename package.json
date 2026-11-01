@@ -1,0 +1,22 @@
+{
+  "name": "brahmastra-monorepo",
+  "private": true,
+  "description": "Brahmāstra — the truly headless design system for taste.",
+  "author": "Mayur Choudhary (https://mayurchoudhary.in)",
+  "license": "MIT",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && rm -rf node_modules .turbo"
+  },
+  "devDependencies": {
+    "pnpm": "12.16.1",
+    "turbo": "2.11.10",
+    "typescript": "7.0.2"
+  }
+}

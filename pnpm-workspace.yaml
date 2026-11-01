@@ -1,0 +1,7 @@
+packages:
+  - "packages/*"
+  - "apps/*"
+allowBuilds:
+  esbuild: true
+  # The local pnpm copy only exists so Turborepo can find a binary; it needs no setup script.
+  pnpm: false
