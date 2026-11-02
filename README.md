@@ -14,7 +14,7 @@ Made in India, by [Mayur Choudhary](https://mayurchoudhary.in) ([@ux_by_mayur](h
 - **Truly headless.** Behaviour and accessibility ship separately from styles. Styles are CSS variables, with zero runtime cost.
 - **Mobile-first, properly.** 44px touch targets as a token, bottom sheets and bottom navigation as first-class components, a sheet motion curve, and no 16px-input zoom traps.
 - **Accessibility you can check.** Every colour pairing in every theme is tested against WCAG 2.2 AA in CI.
-- **Indic-first.** Host Grotesk for headings and Mukta (Ek Type, Mumbai) for body text. Mukta's Latin and Devanagari were drawn together. The Anek family covers nine Indian scripts, and line heights adjust for Indic text. Indian formats (₹, lakh/crore, +91, OTP) are coming as components.
+- **Indic-first.** Noto Sans across English and nine Indian scripts, with per-script line heights and a mobile/desktop type scale. `<html lang="ta">` is all it takes. Indian formats (₹, lakh/crore, +91, OTP) are coming as components.
 - **Figma ↔ code parity.** The same tokens, the same names and the same modes in both.
 
 ## Status

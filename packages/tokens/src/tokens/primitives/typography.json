@@ -4,52 +4,37 @@
       "$type": "fontFamily",
       "heading": {
         "$value": [
-          "Host Grotesk",
-          "Anek Devanagari",
-          "Anek Tamil",
-          "Anek Bangla",
-          "Anek Telugu",
-          "Anek Kannada",
-          "Anek Malayalam",
-          "Anek Gujarati",
-          "Anek Gurmukhi",
-          "Anek Odia",
+          "Noto Sans",
+          "Noto Sans Devanagari",
+          "Noto Sans Bengali",
+          "Noto Sans Tamil",
+          "Noto Sans Telugu",
+          "Noto Sans Kannada",
+          "Noto Sans Malayalam",
+          "Noto Sans Gujarati",
+          "Noto Sans Gurmukhi",
+          "Noto Sans Oriya",
           "system-ui",
           "sans-serif"
         ],
-        "$description": "Headings only (display-*, heading-*). Indic glyphs fall through to the Anek family (Ek Type, Mumbai)."
-      },
-      "heading-indic": {
-        "$value": [
-          "Anek Devanagari",
-          "Anek Tamil",
-          "Anek Bangla",
-          "Anek Telugu",
-          "Anek Kannada",
-          "Anek Malayalam",
-          "Anek Gujarati",
-          "Anek Gurmukhi",
-          "Anek Odia",
-          "system-ui",
-          "sans-serif"
-        ],
-        "$description": "Heading face for pages that are fully in an Indic language."
+        "$description": "Headings. Noto Sans for Latin; each Indian script picks its own Noto font from the stack, glyph by glyph."
       },
       "body": {
         "$value": [
-          "Mukta",
-          "Anek Tamil",
-          "Anek Bangla",
-          "Anek Telugu",
-          "Anek Kannada",
-          "Anek Malayalam",
-          "Anek Gujarati",
-          "Anek Gurmukhi",
-          "Anek Odia",
+          "Noto Sans",
+          "Noto Sans Devanagari",
+          "Noto Sans Bengali",
+          "Noto Sans Tamil",
+          "Noto Sans Telugu",
+          "Noto Sans Kannada",
+          "Noto Sans Malayalam",
+          "Noto Sans Gujarati",
+          "Noto Sans Gurmukhi",
+          "Noto Sans Oriya",
           "system-ui",
           "sans-serif"
         ],
-        "$description": "Body and every UI string. Mukta (Ek Type) draws Latin and Devanagari together, so mixed Hindi-English text shares one baseline."
+        "$description": "Body and every UI string. Same Noto stack, so mixed Hindi-English text shares one rhythm."
       },
       "mono": {
         "$value": [
@@ -110,9 +95,27 @@
           "unit": "px"
         }
       },
+      "20": {
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        }
+      },
       "22": {
         "$value": {
           "value": 22,
+          "unit": "px"
+        }
+      },
+      "24": {
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "26": {
+        "$value": {
+          "value": 26,
           "unit": "px"
         }
       },
@@ -122,9 +125,27 @@
           "unit": "px"
         }
       },
+      "30": {
+        "$value": {
+          "value": 30,
+          "unit": "px"
+        }
+      },
+      "34": {
+        "$value": {
+          "value": 34,
+          "unit": "px"
+        }
+      },
       "36": {
         "$value": {
           "value": 36,
+          "unit": "px"
+        }
+      },
+      "40": {
+        "$value": {
+          "value": 40,
           "unit": "px"
         }
       },
