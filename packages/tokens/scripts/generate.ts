@@ -98,4 +98,4 @@ for (const theme of THEMES) {
     });
   }
 }
-console.log("✓ generated palette and 4 theme files");
+console.log(`✓ generated palette and ${THEMES.length * MODES.length} theme files`);

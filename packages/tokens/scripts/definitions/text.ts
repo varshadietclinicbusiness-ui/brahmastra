@@ -1,6 +1,7 @@
 /**
  * Semantic text styles, mirrored 1:1 from Figma (Type scale × Script collections).
- * Noto Sans for every script, so English and Indian languages share weights and rhythm.
+ * Latin: Schibsted Grotesk headings + Inter text (decision 0009). Indian scripts fall
+ * through to the matching Noto Sans font, with taller line-heights and no tracking.
  * Sizes are px (shipped as rem). Line-heights are px on a 4px grid, shipped as unitless
  * ratios. Desktop only enlarges display and heading styles.
  */
@@ -23,23 +24,23 @@ export interface TextStyle {
 }
 
 export const TEXT_STYLES: Record<string, TextStyle> = {
-  "display-xl": { family: "heading", kind: "head", mobile: [40, 48], desktop: [72, 80], weight: "bold", tracking: -2, description: "Marketing hero, one per page." },
-  "display-lg": { family: "heading", kind: "head", mobile: [34, 40], desktop: [56, 64], weight: "bold", tracking: -1.5, description: "Landing headlines." },
-  "display-md": { family: "heading", kind: "head", mobile: [30, 36], desktop: [44, 52], weight: "bold", tracking: -1, description: "Section openers, docs titles." },
-  "heading-xl": { family: "heading", kind: "head", mobile: [26, 32], desktop: [36, 44], weight: "semibold", tracking: -0.5, description: "Page title on desktop, onboarding title." },
-  "heading-lg": { family: "heading", kind: "head", mobile: [22, 28], desktop: [28, 36], weight: "semibold", tracking: -0.5, description: "Screen title on phones." },
-  "heading-md": { family: "heading", kind: "head", mobile: [20, 28], desktop: [24, 32], weight: "semibold", tracking: 0, description: "Section title." },
-  "heading-sm": { family: "heading", kind: "head", mobile: [18, 24], desktop: [20, 28], weight: "semibold", tracking: 0, description: "Card, sheet and dialog titles." },
-  "heading-xs": { family: "heading", kind: "head", mobile: [16, 24], desktop: [16, 24], weight: "semibold", tracking: 0, description: "List group headers." },
-  "body-lg": { family: "body", kind: "body", mobile: [18, 28], desktop: [18, 28], weight: "regular", tracking: 0, description: "Intros, long reading." },
-  "body-md": { family: "body", kind: "body", mobile: [16, 24], desktop: [16, 24], weight: "regular", tracking: 0, description: "Default text and inputs. Never smaller in inputs: iOS zooms below 16px." },
+  "display-xl": { family: "heading", kind: "head", mobile: [40, 44], desktop: [72, 76], weight: "semibold", tracking: -2.5, description: "Marketing hero, one per page." },
+  "display-lg": { family: "heading", kind: "head", mobile: [34, 40], desktop: [56, 60], weight: "semibold", tracking: -2.5, description: "Landing headlines." },
+  "display-md": { family: "heading", kind: "head", mobile: [30, 36], desktop: [44, 48], weight: "semibold", tracking: -2, description: "Section openers, docs titles." },
+  "heading-xl": { family: "heading", kind: "head", mobile: [26, 32], desktop: [36, 40], weight: "semibold", tracking: -1.5, description: "Page title on desktop, onboarding title." },
+  "heading-lg": { family: "heading", kind: "head", mobile: [22, 28], desktop: [28, 32], weight: "semibold", tracking: -1.5, description: "Screen title on phones." },
+  "heading-md": { family: "heading", kind: "head", mobile: [20, 28], desktop: [24, 32], weight: "semibold", tracking: -1, description: "Section title." },
+  "heading-sm": { family: "heading", kind: "head", mobile: [18, 24], desktop: [20, 28], weight: "semibold", tracking: -1, description: "Card, sheet and dialog titles." },
+  "heading-xs": { family: "heading", kind: "head", mobile: [16, 24], desktop: [16, 24], weight: "semibold", tracking: -0.5, description: "List group headers." },
+  "body-lg": { family: "body", kind: "body", mobile: [18, 28], desktop: [18, 28], weight: "regular", tracking: -0.5, description: "Intros, long reading." },
+  "body-md": { family: "body", kind: "body", mobile: [16, 24], desktop: [16, 24], weight: "regular", tracking: -0.3, description: "Default text and inputs. Never smaller in inputs: iOS zooms below 16px." },
   "body-sm": { family: "body", kind: "body", mobile: [14, 20], desktop: [14, 20], weight: "regular", tracking: 0, description: "Secondary text, dense lists. Smallest size for Indian scripts." },
   "body-xs": { family: "body", kind: "body", mobile: [12, 16], desktop: [12, 16], weight: "regular", tracking: 0, description: "Captions and timestamps, Latin only." },
-  "label-xl": { family: "body", kind: "body", mobile: [20, 28], desktop: [22, 28], weight: "semibold", tracking: 0, description: "Prices, OTP digits, stats." },
-  "label-lg": { family: "body", kind: "body", mobile: [16, 20], desktop: [16, 20], weight: "semibold", tracking: 0, description: "M and L buttons." },
-  "label-md": { family: "body", kind: "body", mobile: [14, 20], desktop: [14, 20], weight: "semibold", tracking: 0, description: "S buttons, tabs, field labels." },
-  "label-sm": { family: "body", kind: "body", mobile: [12, 16], desktop: [12, 16], weight: "semibold", tracking: 0, description: "Badges, tab-bar labels." },
-  overline: { family: "body", kind: "body", mobile: [11, 16], desktop: [12, 16], weight: "semibold", tracking: 8, description: "Eyebrow labels, uppercase, Latin only." },
+  "label-xl": { family: "body", kind: "body", mobile: [20, 28], desktop: [22, 28], weight: "semibold", tracking: -1, description: "Prices, OTP digits, stats." },
+  "label-lg": { family: "body", kind: "body", mobile: [16, 20], desktop: [16, 20], weight: "semibold", tracking: -0.5, description: "M and L buttons." },
+  "label-md": { family: "body", kind: "body", mobile: [14, 20], desktop: [14, 20], weight: "semibold", tracking: -0.3, description: "S buttons, tabs, field labels." },
+  "label-sm": { family: "body", kind: "body", mobile: [12, 16], desktop: [12, 16], weight: "medium", tracking: 0, description: "Badges, tab-bar labels." },
+  overline: { family: "body", kind: "body", mobile: [11, 16], desktop: [12, 16], weight: "semibold", tracking: 6, description: "Eyebrow labels, uppercase, Latin only." },
   "code-md": { family: "mono", kind: "code", mobile: [14, 20], desktop: [14, 20], weight: "regular", tracking: 0, description: "Code and tokens." },
   "code-sm": { family: "mono", kind: "code", mobile: [12, 16], desktop: [12, 16], weight: "regular", tracking: 0, description: "Inline code in docs." },
 };

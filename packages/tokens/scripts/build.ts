@@ -28,7 +28,6 @@ const block = (selector: string, body: string, scheme: Mode | null, indent = "")
     .map((line) => indent + line)
     .join("\n")}\n${indent}}\n`;
 
-const T = `data-${PREFIX}-theme`;
 const M = `data-${PREFIX}-mode`;
 
 async function buildCss(base: Layer, themes: Record<string, Layer>) {
@@ -37,13 +36,10 @@ async function buildCss(base: Layer, themes: Record<string, Layer>) {
     `/* Primitives and text styles */\n`,
     block(":root", base.css, null),
     `\n/* Themes. Light is the default; set ${M}="dark" for dark, or let the OS decide. */\n`,
-    block(`:root, [${T}="neutral"]`, themes["neutral-light"]!.css, "light"),
-    block(`[${T}="painted"]`, themes["painted-light"]!.css, "light"),
-    block(`[${M}="dark"], [${T}="neutral"][${M}="dark"]`, themes["neutral-dark"]!.css, "dark"),
-    block(`[${T}="painted"][${M}="dark"]`, themes["painted-dark"]!.css, "dark"),
+    block(`:root, [${M}="light"]`, themes["neutral-light"]!.css, "light"),
+    block(`[${M}="dark"]`, themes["neutral-dark"]!.css, "dark"),
     `\n@media (prefers-color-scheme: dark) {\n`,
     block(`:root:not([${M}="light"])`, themes["neutral-dark"]!.css, "dark", "  "),
-    block(`[${T}="painted"]:not([${M}="light"])`, themes["painted-dark"]!.css, "dark", "  "),
     `}\n`,
   ].join("");
   write("css/tokens.css", css);
@@ -91,7 +87,7 @@ function tailwindName(token: TransformedToken): string | null {
     return `color-${a}-${b}`;
   }
   if (group === "radius" && token.path.length === 2) return `radius-${a}`;
-  if (group === "shadow" && ["raised", "overlay"].includes(a!)) return `shadow-${a}`;
+  if (group === "shadow" && ["raised", "floating", "overlay", "modal"].includes(a!)) return `shadow-${a}`;
   if (group === "font" && a === "family") return `font-${b}`;
   if (group === "easing") return `ease-${a}`;
   if (group === "text") {
@@ -210,7 +206,7 @@ function buildFigma() {
     return [{ name: leaf.path.join("/"), type: fv.type, scopes: figmaScopes(leaf.path), codeSyntax: { WEB: cssVar(leaf.path) }, values: { Value: fv.value } }];
   });
 
-  const modes = THEMES.flatMap((theme) => MODES.map((mode) => ({ theme, mode, label: `${cap(theme)} ${cap(mode)}` })));
+  const modes = THEMES.flatMap((theme) => MODES.map((mode) => ({ theme, mode, label: cap(mode) })));
   const byName = new Map<string, { name: string; resolvedType: string; scopes: string[]; codeSyntax: object; values: Record<string, unknown> }>();
   for (const { theme, mode, label } of modes) {
     for (const leaf of leaves(readJson(join(SRC, "themes", `${theme}-${mode}.json`)))) {

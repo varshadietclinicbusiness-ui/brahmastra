@@ -1,0 +1,42 @@
+{
+  "$description": "Spacing by role, so layouts say why a gap exists, not just how big it is. Hand-authored.",
+  "inset": {
+    "$type": "dimension",
+    "$description": "Padding inside a component or container.",
+    "xs": { "$value": "{space.4}" },
+    "sm": { "$value": "{space.8}" },
+    "md": { "$value": "{space.12}" },
+    "lg": { "$value": "{space.16}" },
+    "xl": { "$value": "{space.24}" }
+  },
+  "stack": {
+    "$type": "dimension",
+    "$description": "Vertical gap between siblings: tight for related items, loose for groups.",
+    "xs": { "$value": "{space.4}" },
+    "sm": { "$value": "{space.8}" },
+    "md": { "$value": "{space.16}" },
+    "lg": { "$value": "{space.24}" },
+    "xl": { "$value": "{space.32}" }
+  },
+  "inline": {
+    "$type": "dimension",
+    "$description": "Horizontal gap between siblings in a row (icon to label, chips, buttons).",
+    "xs": { "$value": "{space.4}" },
+    "sm": { "$value": "{space.8}" },
+    "md": { "$value": "{space.12}" },
+    "lg": { "$value": "{space.16}" }
+  },
+  "section": {
+    "$type": "dimension",
+    "$description": "Space between page sections.",
+    "sm": { "$value": "{space.32}" },
+    "md": { "$value": "{space.48}" },
+    "lg": { "$value": "{space.64}" },
+    "xl": { "$value": "{space.96}" }
+  },
+  "page-margin": {
+    "$type": "dimension",
+    "$description": "Side margin of a phone screen; tablets and desktops use grid.*.margin.",
+    "$value": "{space.16}"
+  }
+}

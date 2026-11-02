@@ -20,6 +20,15 @@
       },
       "overlay": {
         "$value": "{color.scrim}"
+      },
+      "hover": {
+        "$value": "{color.kajal.800}"
+      },
+      "pressed": {
+        "$value": "{color.kajal.700}"
+      },
+      "selected": {
+        "$value": "{color.neel.950}"
       }
     },
     "fg": {
@@ -30,6 +39,9 @@
         "$value": "{color.kajal.300}"
       },
       "subtle": {
+        "$value": "{color.kajal.400}"
+      },
+      "placeholder": {
         "$value": "{color.kajal.400}"
       },
       "disabled": {
@@ -54,9 +66,6 @@
       },
       "focus": {
         "$value": "{color.neel.300}"
-      },
-      "control": {
-        "$value": "{color.transparent}"
       }
     },
     "accent": {
@@ -225,8 +234,14 @@
     "raised": {
       "$value": "{shadow.soft-sm-dark}"
     },
+    "floating": {
+      "$value": "{shadow.soft-md-dark}"
+    },
     "overlay": {
       "$value": "{shadow.soft-lg-dark}"
+    },
+    "modal": {
+      "$value": "{shadow.soft-xl-dark}"
     }
   }
 }

@@ -4,7 +4,7 @@
       "$type": "fontFamily",
       "heading": {
         "$value": [
-          "Noto Sans",
+          "Schibsted Grotesk",
           "Noto Sans Devanagari",
           "Noto Sans Bengali",
           "Noto Sans Tamil",
@@ -17,11 +17,11 @@
           "system-ui",
           "sans-serif"
         ],
-        "$description": "Headings. Noto Sans for Latin; each Indian script picks its own Noto font from the stack, glyph by glyph."
+        "$description": "Headings. Schibsted Grotesk for Latin; each Indian script falls through to its Noto font."
       },
       "body": {
         "$value": [
-          "Noto Sans",
+          "Inter",
           "Noto Sans Devanagari",
           "Noto Sans Bengali",
           "Noto Sans Tamil",
@@ -34,7 +34,7 @@
           "system-ui",
           "sans-serif"
         ],
-        "$description": "Body and every UI string. Same Noto stack, so mixed Hindi-English text shares one rhythm."
+        "$description": "Body and every UI string. Inter for Latin; Indian scripts use their Noto font."
       },
       "mono": {
         "$value": [
