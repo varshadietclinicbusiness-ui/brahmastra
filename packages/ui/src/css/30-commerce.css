@@ -1,0 +1,103 @@
+@layer astra.components {
+  /* Veg mark: FSSAI square with a dot (veg) or triangle (non-veg) */
+  .astra-veg-mark {
+    --_c: var(--astra-color-success-solid);
+    --_s: 12px;
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: var(--_s);
+    height: var(--_s);
+    border: 1.25px solid var(--_c);
+    border-radius: var(--astra-radius-2);
+    background: var(--astra-color-bg-surface);
+  }
+  .astra-veg-mark[data-size="md"] { --_s: 16px; border-width: 1.5px; border-radius: var(--astra-radius-4); }
+  .astra-veg-mark[data-type="non-veg"] { --_c: var(--astra-color-danger-solid); }
+  .astra-veg-mark [data-slot="mark"] { width: 50%; height: 50%; border-radius: var(--astra-radius-full); background: var(--_c); }
+  .astra-veg-mark[data-type="non-veg"] [data-slot="mark"] { border-radius: 0; clip-path: polygon(50% 4%, 100% 96%, 0 96%); width: 56%; }
+
+  /* Price */
+  .astra-price { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 0 var(--astra-space-6); font-variant-numeric: tabular-nums; }
+  .astra-price [data-slot="value"] { color: var(--astra-color-fg-default); font-size: var(--astra-text-label-lg-size); line-height: var(--astra-text-label-lg-line-height); font-weight: var(--astra-font-weight-semibold); }
+  .astra-price [data-slot="mrp"] { color: var(--astra-color-fg-subtle); font-size: var(--astra-text-body-sm-size); }
+  .astra-price [data-slot="saving"] { color: var(--astra-color-success-fg); font-size: var(--astra-text-body-sm-size); font-weight: var(--astra-font-weight-semibold); }
+  .astra-price[data-type="free"] [data-slot="value"] { color: var(--astra-color-success-fg); }
+  .astra-price[data-size="sm"] [data-slot="value"] { font-size: var(--astra-text-label-md-size); line-height: var(--astra-text-label-md-line-height); }
+  .astra-price[data-size="sm"] :is([data-slot="mrp"], [data-slot="saving"]) { font-size: var(--astra-text-body-xs-size); }
+  .astra-price[data-size="lg"] [data-slot="value"] { font-size: var(--astra-text-label-xl-size); line-height: var(--astra-text-label-xl-line-height); letter-spacing: var(--astra-text-label-xl-tracking); }
+  .astra-price[data-size="lg"] :is([data-slot="mrp"], [data-slot="saving"]) { font-size: var(--astra-text-body-md-size); }
+
+  /* Offer tag */
+  .astra-offer-tag { display: inline-flex; align-items: center; gap: var(--astra-space-4); height: 20px; padding: 0 var(--astra-space-8) 0 var(--astra-space-6); border-radius: var(--astra-radius-6); background: var(--astra-color-accent-subtle); color: var(--astra-color-accent-fg); font-size: var(--astra-text-label-sm-size); font-weight: var(--astra-font-weight-semibold); white-space: nowrap; }
+  .astra-offer-tag [data-slot="icon"] { display: inline-flex; font-size: 14px; }
+  .astra-offer-tag[data-type="benefit"] { background: var(--astra-color-success-subtle); color: var(--astra-color-success-fg); }
+  .astra-offer-tag[data-type="ribbon"] { height: 24px; padding: 0 var(--astra-space-12) 0 var(--astra-space-8); border-radius: 0 var(--astra-radius-8) var(--astra-radius-8) 0; background: var(--astra-color-danger-solid); color: var(--astra-color-danger-on-solid); text-transform: uppercase; letter-spacing: 0.06em; }
+  .astra-offer-tag[data-type="on-image"] { flex-direction: column; align-items: flex-start; gap: 0; height: auto; padding: 0; background: none; color: var(--astra-color-white); text-shadow: 0 1px 6px var(--astra-color-ink-alpha-60); }
+  .astra-offer-tag[data-type="on-image"] [data-slot="label"] { font-family: var(--astra-font-family-heading); font-size: var(--astra-font-size-22); line-height: 1.05; font-weight: var(--astra-font-weight-bold); letter-spacing: -0.02em; }
+  .astra-offer-tag[data-type="on-image"] [data-slot="subtitle"] { font-size: var(--astra-text-label-sm-size); letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* Quantity stepper: ADD → − 2 + */
+  .astra-quantity-stepper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--astra-space-4);
+    min-width: 96px;
+    height: 40px;
+    border: 1px solid var(--astra-color-border-default);
+    border-radius: var(--astra-radius-control);
+    background: var(--astra-color-bg-surface);
+    color: var(--astra-color-fg-default);
+    font: inherit;
+    font-size: var(--astra-text-label-md-size);
+    font-weight: var(--astra-font-weight-bold);
+    letter-spacing: 0.04em;
+    box-shadow: var(--astra-shadow-subtle);
+    cursor: pointer;
+    transition: background-color var(--astra-transition-hover), scale var(--astra-transition-press);
+  }
+  .astra-quantity-stepper[data-state="add"][data-hovered] { background: var(--astra-color-bg-hover); }
+  .astra-quantity-stepper[data-state="add"][data-pressed] { scale: 0.97; }
+  .astra-quantity-stepper [data-slot="add-icon"] { position: absolute; top: 4px; right: 6px; font-size: 12px; color: var(--astra-color-fg-muted); }
+  .astra-quantity-stepper[data-state="count"] { justify-content: space-between; padding: 0; background: var(--astra-color-accent-solid); border-color: transparent; color: var(--astra-color-accent-on-solid); cursor: default; animation: astra-pop var(--astra-transition-pop); }
+  .astra-quantity-stepper button { position: relative; display: grid; place-items: center; width: 36px; height: 100%; border: 0; border-radius: inherit; background: transparent; color: inherit; font-size: 16px; cursor: pointer; }
+  .astra-quantity-stepper button[data-pressed] { background: var(--astra-color-white-alpha-16); }
+  .astra-quantity-stepper button[data-disabled] { opacity: 0.4; cursor: not-allowed; }
+  .astra-quantity-stepper [data-slot="count"] { min-width: 1.5ch; text-align: center; font-variant-numeric: tabular-nums; }
+  .astra-quantity-stepper[data-disabled], .astra-quantity-stepper[data-state="add"][data-disabled] { background: var(--astra-color-bg-sunken); color: var(--astra-color-fg-disabled); box-shadow: none; cursor: not-allowed; }
+  @keyframes astra-pop { 0% { scale: 0.92; } 60% { scale: 1.04; } 100% { scale: 1; } }
+
+  /* Cart bar */
+  .astra-cart-bar { display: grid; gap: var(--astra-space-12); padding: var(--astra-space-12) var(--astra-space-16) calc(var(--astra-space-12) + env(safe-area-inset-bottom)); background: var(--astra-color-bg-surface); box-shadow: var(--astra-shadow-up); }
+  .astra-cart-bar [data-slot="nudge"] { display: grid; gap: var(--astra-space-8); font-size: var(--astra-text-label-md-size); font-weight: var(--astra-font-weight-semibold); color: var(--astra-color-fg-default); }
+  .astra-cart-bar [data-slot="nudge"][data-unlocked] { color: var(--astra-color-success-fg); }
+  .astra-cart-bar [data-slot="nudge-track"] { height: 4px; border-radius: var(--astra-radius-full); background: var(--astra-color-bg-sunken); overflow: hidden; }
+  .astra-cart-bar [data-slot="nudge-fill"] { display: block; height: 100%; border-radius: inherit; background: var(--astra-color-success-solid); transition: width var(--astra-transition-move); }
+  .astra-cart-bar [data-slot="bar"] { display: flex; align-items: center; gap: var(--astra-space-12); min-height: 56px; padding: var(--astra-space-8) var(--astra-space-16); border-radius: var(--astra-radius-16); background: var(--astra-color-accent-solid); color: var(--astra-color-accent-on-solid); text-decoration: none; transition: background-color var(--astra-transition-hover), scale var(--astra-transition-press); animation: astra-rise var(--astra-transition-enter); }
+  .astra-cart-bar [data-slot="bar"][data-hovered] { background: var(--astra-color-accent-solid-hover); }
+  .astra-cart-bar [data-slot="bar"][data-pressed] { scale: 0.98; }
+  .astra-cart-bar [data-slot="summary"] { display: grid; flex: 1; }
+  .astra-cart-bar [data-slot="title"] { font-size: var(--astra-text-label-lg-size); line-height: var(--astra-text-label-lg-line-height); font-weight: var(--astra-font-weight-semibold); font-variant-numeric: tabular-nums; }
+  .astra-cart-bar [data-slot="note"] { font-size: var(--astra-text-body-xs-size); opacity: 0.72; }
+  .astra-cart-bar [data-slot="action"] { font-size: var(--astra-text-label-lg-size); font-weight: var(--astra-font-weight-semibold); }
+  .astra-cart-bar [data-slot="chevron"] { font-size: 20px; }
+  @keyframes astra-rise { from { translate: 0 8px; opacity: 0; } }
+
+  /* Bill summary */
+  .astra-bill-summary { display: grid; gap: var(--astra-space-12); padding: var(--astra-space-20); border-radius: var(--astra-radius-20); background: var(--astra-color-bg-surface); box-shadow: var(--astra-shadow-raised); }
+  .astra-bill-summary [data-slot="title"] { margin: 0; font-family: var(--astra-font-family-heading); font-size: var(--astra-text-heading-xs-size); line-height: var(--astra-text-heading-xs-line-height); font-weight: var(--astra-font-weight-semibold); color: var(--astra-color-fg-default); }
+  .astra-bill-summary [data-slot="lines"] { display: grid; gap: var(--astra-space-8); margin: 0; }
+  .astra-bill-summary [data-slot="line"], .astra-bill-summary [data-slot="total"] { display: flex; align-items: baseline; justify-content: space-between; gap: var(--astra-space-12); }
+  .astra-bill-summary dt { display: inline-flex; align-items: center; gap: var(--astra-space-6); color: var(--astra-color-fg-muted); font-size: var(--astra-text-body-sm-size); }
+  .astra-bill-summary dd { margin: 0; }
+  .astra-bill-summary [data-slot="line"] .astra-price [data-slot="value"] { font-weight: var(--astra-font-weight-regular); font-size: var(--astra-text-body-sm-size); }
+  .astra-bill-summary [data-slot="total"] { padding-top: var(--astra-space-12); margin-top: var(--astra-space-4); border-top: 1px dashed var(--astra-color-border-default); }
+  .astra-bill-summary [data-slot="total"] dt { color: var(--astra-color-fg-default); font-size: var(--astra-text-label-lg-size); font-weight: var(--astra-font-weight-semibold); }
+  .astra-bill-summary [data-slot="total"] dd { font-size: var(--astra-text-label-xl-size); font-weight: var(--astra-font-weight-semibold); color: var(--astra-color-fg-default); font-variant-numeric: tabular-nums; }
+  .astra-bill-summary [data-slot="savings"] { margin: 0; padding: var(--astra-space-8) var(--astra-space-12); border-radius: var(--astra-radius-12); background: var(--astra-color-success-subtle); color: var(--astra-color-success-fg); font-size: var(--astra-text-label-md-size); font-weight: var(--astra-font-weight-semibold); }
+  /* An ⓘ inside a bill line stays 24px to keep rows even; its hit area is still 44px. */
+  .astra-bill-summary dt .astra-icon-button { --_h: 24px; min-height: 24px; width: 24px; margin-block: -4px; font-size: 14px; }
+  .astra-bill-summary dt .astra-icon-button [data-slot="icon"] { font-size: 16px; }
+}

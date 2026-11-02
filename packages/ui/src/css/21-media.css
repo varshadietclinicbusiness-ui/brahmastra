@@ -1,0 +1,78 @@
+@layer astra.components {
+  .astra-avatar {
+    --_size: 40px;
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: var(--_size);
+    height: var(--_size);
+    border-radius: var(--astra-radius-full);
+    background: var(--astra-color-bg-sunken);
+    color: var(--astra-color-fg-default);
+    font-size: calc(var(--_size) * 0.36);
+    font-weight: var(--astra-font-weight-semibold);
+    letter-spacing: -0.01em;
+    user-select: none;
+  }
+  .astra-avatar[data-size="xs"] { --_size: 24px; }
+  .astra-avatar[data-size="sm"] { --_size: 32px; }
+  .astra-avatar[data-size="lg"] { --_size: 56px; }
+  .astra-avatar[data-size="xl"] { --_size: 72px; }
+  .astra-avatar [data-slot="image"] { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+  /* A 6% inner ring so white photos keep their edge on white. */
+  .astra-avatar[data-type="image"]::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px var(--astra-color-ink-alpha-8); pointer-events: none; }
+  .astra-avatar [data-slot="icon"] { width: 55%; height: 55%; color: var(--astra-color-fg-muted); }
+  .astra-avatar [data-slot="status"] { position: absolute; right: 0; bottom: 0; width: 28%; height: 28%; min-width: 8px; min-height: 8px; border-radius: var(--astra-radius-full); background: var(--astra-color-fg-subtle); box-shadow: 0 0 0 2px var(--astra-color-bg-canvas); }
+  .astra-avatar [data-status="online"] { background: var(--astra-color-success-solid); }
+  .astra-avatar [data-status="busy"] { background: var(--astra-color-danger-solid); }
+  .astra-avatar [data-status="away"] { background: var(--astra-color-warning-solid); }
+
+  .astra-avatar-group { display: inline-flex; }
+  .astra-avatar-group > .astra-avatar { box-shadow: 0 0 0 2px var(--astra-color-bg-canvas); }
+  .astra-avatar-group > .astra-avatar + .astra-avatar { margin-inline-start: calc(var(--_size, 32px) * -0.25); }
+
+  .astra-thumbnail {
+    --_w: 72px;
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+    width: var(--_w);
+    aspect-ratio: 1 / 1;
+    border-radius: var(--astra-radius-12);
+    background: var(--astra-color-bg-sunken);
+    overflow: hidden;
+  }
+  .astra-thumbnail[data-size="sm"] { --_w: 48px; border-radius: var(--astra-radius-8); }
+  .astra-thumbnail[data-size="lg"] { --_w: 120px; border-radius: var(--astra-radius-16); }
+  .astra-thumbnail[data-ratio="4/3"] { aspect-ratio: 4 / 3; }
+  .astra-thumbnail[data-ratio="16/9"] { aspect-ratio: 16 / 9; }
+  .astra-thumbnail[data-ratio="3/4"] { aspect-ratio: 3 / 4; }
+  .astra-thumbnail[data-shape="circle"] { border-radius: var(--astra-radius-full); }
+  .astra-thumbnail [data-slot="image"] { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .astra-thumbnail::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px var(--astra-color-ink-alpha-8); pointer-events: none; }
+
+  .astra-divider { border: 0; margin: 0; background: var(--astra-color-border-subtle); }
+  .astra-divider[aria-orientation="horizontal"], .astra-divider:not([aria-orientation]) { height: 1px; width: 100%; }
+  .astra-divider[aria-orientation="vertical"] { width: 1px; align-self: stretch; }
+  .astra-divider[data-variant="inset"] { margin-inline-start: var(--astra-space-64); width: auto; }
+  .astra-divider[data-variant="labelled"] { display: flex; align-items: center; gap: var(--astra-space-16); height: auto; background: none; color: var(--astra-color-fg-muted); font-size: var(--astra-text-body-sm-size); }
+  .astra-divider [data-slot="line"] { flex: 1; height: 1px; background: var(--astra-color-border-subtle); }
+
+  .astra-kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 var(--astra-space-6);
+    border: 1px solid var(--astra-color-border-default);
+    border-bottom-width: 2px;
+    border-radius: var(--astra-radius-6);
+    background: var(--astra-color-bg-surface);
+    color: var(--astra-color-fg-muted);
+    font: var(--astra-font-weight-regular) var(--astra-text-code-md-size) / 1 var(--astra-font-family-mono);
+  }
+  .astra-kbd[data-size="sm"] { min-width: 20px; height: 20px; padding: 0 var(--astra-space-4); border-radius: var(--astra-radius-4); font-size: var(--astra-text-code-sm-size); }
+  .astra-kbd + .astra-kbd { margin-inline-start: var(--astra-space-4); }
+}

@@ -1,0 +1,53 @@
+@layer astra.base {
+  :where([class^="astra-"], [class*=" astra-"]),
+  :where([class^="astra-"], [class*=" astra-"]) *,
+  :where([class^="astra-"], [class*=" astra-"])::before,
+  :where([class^="astra-"], [class*=" astra-"])::after {
+    box-sizing: border-box;
+  }
+
+  /* Text in components follows the body font, including Indian scripts. */
+  :where([class^="astra-"], [class*=" astra-"]) {
+    font-family: var(--astra-font-family-body);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :where([class^="astra-"] [data-slot="icon"], [class^="astra-"] svg[data-slot]) {
+    flex-shrink: 0;
+  }
+
+  /*
+   * Focus is a 2px stroke on the element itself, shown only for keyboard users
+   * (React Aria sets data-focus-visible). Never a shadow, never a separate ring.
+   */
+  :where(.astra-button, .astra-link, .astra-chip, .astra-segment, .astra-tab, .astra-tab-bar-item,
+    .astra-list-item[data-interactive], .astra-quantity-stepper, .astra-quantity-stepper button,
+    .astra-menu-item, .astra-listbox-item, .astra-accordion-item [data-slot="trigger"], .astra-cart-bar [data-slot="bar"],
+    .astra-alert [data-slot="dismiss"], .astra-toast button, .astra-bottom-sheet [data-slot="close"])[data-focus-visible],
+  :where(.astra-bottom-sheet [data-slot="close"]):focus-visible {
+    outline: var(--astra-border-width-strong) solid var(--astra-color-border-focus);
+    outline-offset: 0;
+  }
+
+  /* Every control's hit area is at least 44px, even when it looks smaller. */
+  :where(.astra-button[data-size="sm"], .astra-link, .astra-chip, .astra-checkbox [data-slot="box"], .astra-radio [data-slot="circle"],
+    .astra-quantity-stepper button, .astra-alert [data-slot="dismiss"], .astra-search-field [data-slot="clear"],
+    .astra-toast button, .astra-bottom-sheet [data-slot="close"])::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, var(--astra-size-touch-target));
+    height: max(100%, var(--astra-size-touch-target));
+    transform: translate(-50%, -50%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :where([class^="astra-"], [class*=" astra-"]),
+    :where([class^="astra-"], [class*=" astra-"]) * {
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 1ms !important;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/* Playground chrome only. Nothing here ships. */
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--astra-color-bg-sunken); color: var(--astra-color-fg-default); font-family: var(--astra-font-family-body); -webkit-font-smoothing: antialiased; }
+.pg { display: grid; grid-template-columns: 393px 1fr; gap: 48px; align-items: start; max-width: 1440px; margin: 0 auto; padding: 40px 32px 80px; }
+@media (max-width: 960px) { .pg { grid-template-columns: 1fr; padding: 0; gap: 32px; } .pg-phone { border-radius: 0 !important; height: 100dvh !important; position: relative !important; top: 0 !important; } .pg-sink { padding: 0 16px 64px; } }
+.pg-phone { position: sticky; top: 24px; height: 852px; border-radius: 48px; overflow: hidden; background: var(--astra-color-bg-canvas); box-shadow: var(--astra-shadow-modal), 0 0 0 10px var(--astra-color-bg-inverse); display: flex; flex-direction: column; }
+.pg-phone-scroll { flex: 1; overflow: auto; padding-bottom: 180px; }
+.pg-phone-bottom { position: absolute; left: 0; right: 0; bottom: 0; }
+.pg-status { display: flex; justify-content: space-between; padding: 18px 32px 6px; font-size: 15px; font-weight: 600; }
+.pg > * { min-width: 0; }
+.pg-sink { display: grid; gap: 56px; }
+.pg-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.pg-sec { display: grid; gap: 20px; }
+.pg-sec > h2 { margin: 0; }
+.pg-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.pg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; align-items: start; }
+.pg-card { padding: 24px; border-radius: var(--astra-radius-20); background: var(--astra-color-bg-canvas); box-shadow: var(--astra-shadow-subtle); display: grid; gap: 16px; }
+.pg-label { font-size: var(--astra-text-overline-size); letter-spacing: 0.06em; text-transform: uppercase; color: var(--astra-color-fg-muted); font-weight: 600; }
+.pg-pad { padding: 0 16px; display: grid; gap: 16px; }
+.pg-pad > *, .pg-grid > * { min-width: 0; }
+.pg-dish { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--astra-color-border-subtle); }
+.pg-dish-text { flex: 1; display: grid; gap: 4px; align-content: start; }
+.pg-dish-media { position: relative; display: grid; justify-items: center; }
+.pg-dish-media .astra-quantity-stepper { margin-top: -20px; }
