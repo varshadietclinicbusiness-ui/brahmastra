@@ -2,10 +2,61 @@
   "$description": "Motion presets: a duration and an easing that belong together. Hand-authored.",
   "transition": {
     "$type": "transition",
-    "press": { "$description": "Button and row press feedback.", "$value": { "duration": "{duration.fast}", "delay": "0ms", "timingFunction": "{easing.standard}" } },
-    "move": { "$description": "Tabs, accordions, indicators sliding between states.", "$value": { "duration": "{duration.base}", "delay": "0ms", "timingFunction": "{easing.standard}" } },
-    "enter": { "$description": "Toasts, dialogs and menus appearing.", "$value": { "duration": "{duration.base}", "delay": "0ms", "timingFunction": "{easing.enter}" } },
-    "exit": { "$description": "Anything leaving the screen.", "$value": { "duration": "{duration.fast}", "delay": "0ms", "timingFunction": "{easing.exit}" } },
-    "sheet": { "$description": "Bottom sheets and drawers.", "$value": { "duration": "{duration.slow}", "delay": "0ms", "timingFunction": "{easing.sheet}" } }
+    "press": {
+      "$description": "Button and row press feedback.",
+      "$value": {
+        "duration": "{duration.fast}",
+        "delay": "0ms",
+        "timingFunction": "{easing.standard}"
+      }
+    },
+    "move": {
+      "$description": "Tabs, accordions, indicators sliding between states.",
+      "$value": {
+        "duration": "{duration.base}",
+        "delay": "0ms",
+        "timingFunction": "{easing.standard}"
+      }
+    },
+    "enter": {
+      "$description": "Toasts, dialogs and menus appearing.",
+      "$value": {
+        "duration": "{duration.base}",
+        "delay": "0ms",
+        "timingFunction": "{easing.enter}"
+      }
+    },
+    "exit": {
+      "$description": "Anything leaving the screen.",
+      "$value": {
+        "duration": "{duration.fast}",
+        "delay": "0ms",
+        "timingFunction": "{easing.exit}"
+      }
+    },
+    "sheet": {
+      "$description": "Bottom sheets and drawers.",
+      "$value": {
+        "duration": "{duration.slow}",
+        "delay": "0ms",
+        "timingFunction": "{easing.sheet}"
+      }
+    },
+    "hover": {
+      "$description": "Hover and press colour changes. Short enough to feel instant.",
+      "$value": {
+        "duration": "{duration.instant}",
+        "delay": "0ms",
+        "timingFunction": "{easing.standard}"
+      }
+    },
+    "pop": {
+      "$description": "Confirmations that deserve a little joy: like, add to cart, success tick.",
+      "$value": {
+        "duration": "{duration.base}",
+        "delay": "0ms",
+        "timingFunction": "{easing.overshoot}"
+      }
+    }
   }
 }

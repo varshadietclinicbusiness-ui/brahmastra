@@ -9,6 +9,8 @@
 
 export type Mode = "light" | "dark";
 export type ThemeName = "neutral";
+import { ROLES } from "./elevation.ts";
+
 export const THEMES: ThemeName[] = ["neutral"];
 export const MODES: Mode[] = ["light", "dark"];
 
@@ -104,13 +106,8 @@ function neutral(mode: Mode): SemanticTree {
     // Concentric corners: outer = inner + 4px padding.
     radius: { control: "{radius.8}", "control-outer": "{radius.12}", surface: "{radius.12}", overlay: "{radius.16}", "overlay-inner": "{radius.12}", pill: "{radius.full}" },
     "border-width": { default: "{border-width.1}", strong: "{border-width.2}" },
-    // Elevation roles, lowest to highest.
-    shadow: {
-      raised: light ? "{shadow.soft-sm}" : "{shadow.soft-sm-dark}",
-      floating: light ? "{shadow.soft-md}" : "{shadow.soft-md-dark}",
-      overlay: light ? "{shadow.soft-lg}" : "{shadow.soft-lg-dark}",
-      modal: light ? "{shadow.soft-xl}" : "{shadow.soft-xl-dark}",
-    },
+    // Elevation roles (decision 0010): each maps to a layered primitive, with its own dark set.
+    shadow: Object.fromEntries(Object.entries(ROLES).map(([role, level]) => [role, `{shadow.${level}${light ? "" : "-dark"}}`])),
   };
 }
 
