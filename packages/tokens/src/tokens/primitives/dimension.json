@@ -2,68 +2,404 @@
   "space": {
     "$type": "dimension",
     "$description": "Spacing scale on a 4px grid, with 2px and 6px for tight optical adjustments. Key = pixels.",
-    "0": { "$value": { "value": 0, "unit": "px" } },
-    "2": { "$value": { "value": 2, "unit": "px" } },
-    "4": { "$value": { "value": 4, "unit": "px" } },
-    "6": { "$value": { "value": 6, "unit": "px" } },
-    "8": { "$value": { "value": 8, "unit": "px" } },
-    "12": { "$value": { "value": 12, "unit": "px" } },
-    "16": { "$value": { "value": 16, "unit": "px" } },
-    "20": { "$value": { "value": 20, "unit": "px" } },
-    "24": { "$value": { "value": 24, "unit": "px" } },
-    "32": { "$value": { "value": 32, "unit": "px" } },
-    "40": { "$value": { "value": 40, "unit": "px" } },
-    "48": { "$value": { "value": 48, "unit": "px" } },
-    "64": { "$value": { "value": 64, "unit": "px" } },
-    "80": { "$value": { "value": 80, "unit": "px" } },
-    "96": { "$value": { "value": 96, "unit": "px" } },
-    "128": { "$value": { "value": 128, "unit": "px" } }
+    "0": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "2": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    },
+    "4": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "6": {
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      }
+    },
+    "8": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "12": {
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      }
+    },
+    "16": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "20": {
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      }
+    },
+    "24": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "32": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      }
+    },
+    "40": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "48": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      }
+    },
+    "64": {
+      "$value": {
+        "value": 64,
+        "unit": "px"
+      }
+    },
+    "80": {
+      "$value": {
+        "value": 80,
+        "unit": "px"
+      }
+    },
+    "96": {
+      "$value": {
+        "value": 96,
+        "unit": "px"
+      }
+    },
+    "128": {
+      "$value": {
+        "value": 128,
+        "unit": "px"
+      }
+    }
   },
   "radius": {
     "$type": "dimension",
     "$description": "Corner radii. Key = pixels; `full` makes a capsule.",
-    "0": { "$value": { "value": 0, "unit": "px" } },
-    "2": { "$value": { "value": 2, "unit": "px" } },
-    "4": { "$value": { "value": 4, "unit": "px" } },
-    "6": { "$value": { "value": 6, "unit": "px" } },
-    "8": { "$value": { "value": 8, "unit": "px" } },
-    "12": { "$value": { "value": 12, "unit": "px" } },
-    "16": { "$value": { "value": 16, "unit": "px" } },
-    "20": { "$value": { "value": 20, "unit": "px" } },
-    "24": { "$value": { "value": 24, "unit": "px" } },
-    "32": { "$value": { "value": 32, "unit": "px" } },
-    "full": { "$value": { "value": 9999, "unit": "px" } }
+    "0": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "2": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    },
+    "4": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "6": {
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      }
+    },
+    "8": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "12": {
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      }
+    },
+    "16": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "20": {
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      }
+    },
+    "24": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "32": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      }
+    },
+    "full": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
   },
   "border-width": {
     "$type": "dimension",
-    "1": { "$value": { "value": 1, "unit": "px" } },
-    "2": { "$value": { "value": 2, "unit": "px" } },
-    "4": { "$value": { "value": 4, "unit": "px" } }
+    "1": {
+      "$value": {
+        "value": 1,
+        "unit": "px"
+      }
+    },
+    "2": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    },
+    "4": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    }
   },
   "size": {
     "$type": "dimension",
     "control": {
       "$description": "Control heights. Medium is 44px — the minimum comfortable touch target on a phone.",
-      "sm": { "$value": { "value": 36, "unit": "px" } },
-      "md": { "$value": { "value": 44, "unit": "px" } },
-      "lg": { "$value": { "value": 52, "unit": "px" } }
+      "sm": {
+        "$value": {
+          "value": 36,
+          "unit": "px"
+        }
+      },
+      "md": {
+        "$value": {
+          "value": 44,
+          "unit": "px"
+        }
+      },
+      "lg": {
+        "$value": {
+          "value": 52,
+          "unit": "px"
+        }
+      }
     },
     "touch-target": {
-      "$value": { "value": 44, "unit": "px" },
+      "$value": {
+        "value": 44,
+        "unit": "px"
+      },
       "$description": "Every interactive element's hit area is at least this, even when it looks smaller."
     },
     "icon": {
-      "sm": { "$value": { "value": 16, "unit": "px" } },
-      "md": { "$value": { "value": 20, "unit": "px" } },
-      "lg": { "$value": { "value": 24, "unit": "px" } }
+      "sm": {
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "md": {
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        }
+      },
+      "lg": {
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      }
+    },
+    "safe-area": {
+      "$type": "dimension",
+      "$description": "Design-time insets. In code always prefer env(safe-area-inset-*) — see safe-area.css.",
+      "top-ios": {
+        "$value": {
+          "value": 54,
+          "unit": "px"
+        }
+      },
+      "bottom-ios": {
+        "$value": {
+          "value": 34,
+          "unit": "px"
+        }
+      },
+      "top-android": {
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        }
+      },
+      "bottom-android-gesture": {
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "bottom-android-buttons": {
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        }
+      }
     }
   },
   "breakpoint": {
     "$type": "dimension",
-    "$description": "Mobile-first: styles apply from this width up.",
-    "sm": { "$value": { "value": 640, "unit": "px" } },
-    "md": { "$value": { "value": 768, "unit": "px" } },
-    "lg": { "$value": { "value": 1024, "unit": "px" } },
-    "xl": { "$value": { "value": 1280, "unit": "px" } }
+    "$description": "Mobile-first: each layout applies from this width up. Compact is the default (phones).",
+    "medium": {
+      "$value": {
+        "value": 600,
+        "unit": "px"
+      }
+    },
+    "expanded": {
+      "$value": {
+        "value": 1024,
+        "unit": "px"
+      }
+    },
+    "large": {
+      "$value": {
+        "value": 1440,
+        "unit": "px"
+      }
+    }
+  },
+  "grid": {
+    "$description": "Column grid per breakpoint. Same values as the Figma grid styles.",
+    "compact": {
+      "columns": {
+        "$type": "number",
+        "$value": 4
+      },
+      "gutter": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "margin": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      }
+    },
+    "medium": {
+      "columns": {
+        "$type": "number",
+        "$value": 8
+      },
+      "gutter": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "margin": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      }
+    },
+    "expanded": {
+      "columns": {
+        "$type": "number",
+        "$value": 12
+      },
+      "gutter": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "margin": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        }
+      }
+    },
+    "large": {
+      "columns": {
+        "$type": "number",
+        "$value": 12
+      },
+      "gutter": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "margin": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        }
+      }
+    }
+  },
+  "container": {
+    "$type": "dimension",
+    "$description": "Max content width. Large screens centre the container; extra width stays empty.",
+    "expanded": {
+      "$value": {
+        "value": 1200,
+        "unit": "px"
+      }
+    },
+    "large": {
+      "$value": {
+        "value": 1280,
+        "unit": "px"
+      }
+    },
+    "reading": {
+      "$value": {
+        "value": 680,
+        "unit": "px"
+      }
+    }
   }
 }

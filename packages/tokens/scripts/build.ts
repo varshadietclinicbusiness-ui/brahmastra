@@ -113,10 +113,20 @@ function buildTailwind(base: Layer, theme: Layer) {
     seen.add(name);
     lines.push(`  --${name}: var(--${token.name});`);
   }
+  // Media queries can't read CSS variables, so breakpoints are written as literal values.
+  const bp = base.tokens.filter((t) => t.path[0] === "breakpoint").map((t) => `  --breakpoint-${t.path[1]}: ${t.$value};`);
   write(
     "tailwind/theme.css",
-    `${HEADER}/* Use after @import "tailwindcss"; and @import "@brahmastra/tokens/css"; */\n@theme inline {\n${lines.join("\n")}\n}\n`,
+    `${HEADER}/* Use after @import "tailwindcss"; and @import "@brahmastra/tokens/css"; */\n@theme {\n${bp.join("\n")}\n}\n@theme inline {\n${lines.join("\n")}\n}\n`,
   );
+}
+
+/** Safe areas come from the device at runtime (env()), not from tokens; the size.safe-area tokens are only for design. */
+function buildSafeArea() {
+  const sides = ["top", "right", "bottom", "left"];
+  const vars = sides.map((s) => `  --${PREFIX}-safe-${s}: env(safe-area-inset-${s}, 0px);`).join("\n");
+  const utils = sides.map((s) => `.${PREFIX}-safe-${s} { padding-${s}: var(--${PREFIX}-safe-${s}); }`).join("\n");
+  write("css/safe-area.css", `${HEADER}/* Needs <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">. */\n:root {\n${vars}\n}\n${utils}\n`);
 }
 
 function buildJs(base: Layer, theme: Layer) {
@@ -242,6 +252,7 @@ for (const theme of THEMES as ThemeName[]) for (const mode of MODES) themes[`${t
 
 await buildCss(base, themes);
 buildTypography();
+buildSafeArea();
 buildTailwind(base, themes["neutral-light"]!);
 buildJs(base, themes["neutral-light"]!);
 buildFigma();

@@ -1,7 +1,7 @@
 {
   "name": "@brahmastra/tokens",
   "version": "0.0.0",
-  "description": "Design tokens for Brahmāstra — DTCG source, built to CSS variables, JS, Tailwind and Figma variables.",
+  "description": "Design tokens for Brahm\u0101stra \u2014 DTCG source, built to CSS variables, JS, Tailwind and Figma variables.",
   "author": "Mayur Choudhary (https://mayurchoudhary.in)",
   "license": "MIT",
   "type": "module",
@@ -19,7 +19,9 @@
     },
     "./css": "./dist/css/tokens.css",
     "./tailwind": "./dist/tailwind/theme.css",
-    "./figma": "./dist/figma/variables.json"
+    "./figma": "./dist/figma/variables.json",
+    "./safe-area": "./dist/css/safe-area.css",
+    "./typography": "./dist/css/typography.css"
   },
   "scripts": {
     "generate": "tsx scripts/generate.ts",
