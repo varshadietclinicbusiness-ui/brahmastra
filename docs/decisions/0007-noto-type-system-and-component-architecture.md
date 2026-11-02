@@ -39,7 +39,8 @@ Mayur's practice checklist has 11 rules: integrity, tokens, naming, content, aut
 
 Changes that came with this:
 
-- **Focus** is a `Focus ring` atom (a 2px stroke, 2px outside the shape), not a drop shadow.
+- **Focus** is a 2px `border/focus` stroke on the focused element itself, drawn outside its edge (in code: `outline: 2px solid; outline-offset: 0`). An earlier version used a separate Focus ring atom with a 2px gap. Mayur rejected it on 2026-11-02 as visually detached, so it was removed.
+- **Corners:** outer radius = inner radius + padding wherever shapes nest. The new semantic tokens are `radius.control-outer` (control + 4) and `radius.overlay-inner` (overlay − 4). Every corner uses 100% iOS corner smoothing in Figma; CSS can't smooth corners, so code ships plain radii.
 - **Icon colour** is a variable `icon/color` in an **Icon colour** collection with 10 modes. Each icon slot sets its mode.
   - We tried two approaches first. Glyph overrides were lost when a designer swapped the icon through the instance-swap property, which made Primary buttons show black icons on black. Alpha masks broke on swap too.
   - Variable modes cascade from the slot frame, so they survive swaps.

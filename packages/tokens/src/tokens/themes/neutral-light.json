@@ -195,11 +195,17 @@
     "control": {
       "$value": "{radius.8}"
     },
+    "control-outer": {
+      "$value": "{radius.12}"
+    },
     "surface": {
       "$value": "{radius.12}"
     },
     "overlay": {
       "$value": "{radius.16}"
+    },
+    "overlay-inner": {
+      "$value": "{radius.12}"
     },
     "pill": {
       "$value": "{radius.full}"

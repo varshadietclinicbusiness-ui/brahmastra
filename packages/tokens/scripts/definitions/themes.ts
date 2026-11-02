@@ -103,7 +103,8 @@ function neutral(mode: Mode): SemanticTree {
         : { solid: n(50), "solid-hover": n(200), "solid-active": n(300), subtle: n(800), "subtle-hover": n(700), fg: n(50), border: n(600), "on-solid": n(950) },
       ...statuses(mode),
     },
-    radius: { control: "{radius.8}", surface: "{radius.12}", overlay: "{radius.16}", pill: "{radius.full}" },
+    // Concentric corners: outer = inner + 4px padding.
+    radius: { control: "{radius.8}", "control-outer": "{radius.12}", surface: "{radius.12}", overlay: "{radius.16}", "overlay-inner": "{radius.12}", pill: "{radius.full}" },
     "border-width": { default: "{border-width.1}", strong: "{border-width.2}" },
     shadow: {
       raised: light ? "{shadow.soft-sm}" : "{shadow.soft-sm-dark}",
@@ -130,7 +131,7 @@ function painted(mode: Mode): SemanticTree {
       accent: chromatic("rani", mode),
       ...statuses(mode),
     },
-    radius: { control: "{radius.4}", surface: "{radius.6}", overlay: "{radius.8}", pill: "{radius.full}" },
+    radius: { control: "{radius.4}", "control-outer": "{radius.8}", surface: "{radius.6}", overlay: "{radius.8}", "overlay-inner": "{radius.4}", pill: "{radius.full}" },
     "border-width": { default: "{border-width.2}", strong: "{border-width.2}" },
     shadow: {
       raised: light ? "{shadow.hard-sm}" : "{shadow.hard-sm-dark}",
