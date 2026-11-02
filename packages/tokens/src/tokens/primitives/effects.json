@@ -1,230 +1,14 @@
 {
-  "shadow": {
-    "$type": "shadow",
-    "soft-xs": {
-      "$value": [
-        {
-          "color": "#0b0d120f",
-          "offsetX": "0px",
-          "offsetY": "1px",
-          "blur": "2px",
-          "spread": "0px"
-        }
-      ]
-    },
-    "soft-sm": {
-      "$value": [
-        {
-          "color": "#0b0d1214",
-          "offsetX": "0px",
-          "offsetY": "1px",
-          "blur": "2px",
-          "spread": "0px"
-        },
-        {
-          "color": "#0b0d120f",
-          "offsetX": "0px",
-          "offsetY": "2px",
-          "blur": "6px",
-          "spread": "-1px"
-        }
-      ]
-    },
-    "soft-md": {
-      "$value": [
-        {
-          "color": "#0b0d1214",
-          "offsetX": "0px",
-          "offsetY": "4px",
-          "blur": "8px",
-          "spread": "-2px"
-        },
-        {
-          "color": "#0b0d120f",
-          "offsetX": "0px",
-          "offsetY": "2px",
-          "blur": "4px",
-          "spread": "-2px"
-        }
-      ]
-    },
-    "soft-lg": {
-      "$value": [
-        {
-          "color": "#0b0d122e",
-          "offsetX": "0px",
-          "offsetY": "16px",
-          "blur": "40px",
-          "spread": "-12px"
-        },
-        {
-          "color": "#0b0d1214",
-          "offsetX": "0px",
-          "offsetY": "4px",
-          "blur": "12px",
-          "spread": "-4px"
-        }
-      ]
-    },
-    "soft-xl": {
-      "$value": [
-        {
-          "color": "#0b0d122e",
-          "offsetX": "0px",
-          "offsetY": "24px",
-          "blur": "48px",
-          "spread": "-12px"
-        },
-        {
-          "color": "#0b0d120f",
-          "offsetX": "0px",
-          "offsetY": "8px",
-          "blur": "16px",
-          "spread": "-6px"
-        }
-      ]
-    },
-    "soft-xs-dark": {
-      "$value": [
-        {
-          "color": "#00000066",
-          "offsetX": "0px",
-          "offsetY": "1px",
-          "blur": "2px",
-          "spread": "0px"
-        }
-      ]
-    },
-    "soft-sm-dark": {
-      "$value": [
-        {
-          "color": "#00000066",
-          "offsetX": "0px",
-          "offsetY": "1px",
-          "blur": "3px",
-          "spread": "0px"
-        }
-      ]
-    },
-    "soft-md-dark": {
-      "$value": [
-        {
-          "color": "#00000080",
-          "offsetX": "0px",
-          "offsetY": "4px",
-          "blur": "8px",
-          "spread": "-2px"
-        },
-        {
-          "color": "#00000066",
-          "offsetX": "0px",
-          "offsetY": "2px",
-          "blur": "4px",
-          "spread": "-2px"
-        }
-      ]
-    },
-    "soft-lg-dark": {
-      "$value": [
-        {
-          "color": "#00000099",
-          "offsetX": "0px",
-          "offsetY": "20px",
-          "blur": "48px",
-          "spread": "-12px"
-        }
-      ]
-    },
-    "soft-xl-dark": {
-      "$value": [
-        {
-          "color": "#000000a3",
-          "offsetX": "0px",
-          "offsetY": "24px",
-          "blur": "48px",
-          "spread": "-12px"
-        },
-        {
-          "color": "#00000080",
-          "offsetX": "0px",
-          "offsetY": "8px",
-          "blur": "16px",
-          "spread": "-6px"
-        }
-      ]
-    },
-    "hard-sm": {
-      "$description": "The sign-painter shadow: a solid ink offset, no blur.",
-      "$value": [
-        {
-          "color": "{color.kajal.950}",
-          "offsetX": "3px",
-          "offsetY": "3px",
-          "blur": "0px",
-          "spread": "0px"
-        }
-      ]
-    },
-    "hard-md": {
-      "$description": "Sign-painter shadow, medium.",
-      "$value": [
-        {
-          "color": "{color.kajal.950}",
-          "offsetX": "4px",
-          "offsetY": "4px",
-          "blur": "0px",
-          "spread": "0px"
-        }
-      ]
-    },
-    "hard-lg": {
-      "$value": [
-        {
-          "color": "{color.kajal.950}",
-          "offsetX": "6px",
-          "offsetY": "6px",
-          "blur": "0px",
-          "spread": "0px"
-        }
-      ]
-    },
-    "hard-sm-dark": {
-      "$value": [
-        {
-          "color": "#000000",
-          "offsetX": "3px",
-          "offsetY": "3px",
-          "blur": "0px",
-          "spread": "0px"
-        }
-      ]
-    },
-    "hard-md-dark": {
-      "$value": [
-        {
-          "color": "#000000",
-          "offsetX": "4px",
-          "offsetY": "4px",
-          "blur": "0px",
-          "spread": "0px"
-        }
-      ]
-    },
-    "hard-lg-dark": {
-      "$value": [
-        {
-          "color": "#000000",
-          "offsetX": "6px",
-          "offsetY": "6px",
-          "blur": "0px",
-          "spread": "0px"
-        }
-      ]
-    }
-  },
   "duration": {
     "$type": "duration",
     "$description": "UI motion stays under 500ms. Most interactions use fast or base.",
+    "instant": {
+      "$value": {
+        "value": 80,
+        "unit": "ms"
+      },
+      "$description": "Colour and opacity changes on press and hover."
+    },
     "fast": {
       "$value": {
         "value": 120,
@@ -287,6 +71,24 @@
         1
       ],
       "$description": "Bottom sheets and drawers — the iOS sheet curve."
+    },
+    "overshoot": {
+      "$value": [
+        0.34,
+        1.56,
+        0.64,
+        1
+      ],
+      "$description": "A small, happy overshoot for confirmations: like, add to cart, success ticks. Never for layout."
+    },
+    "linear": {
+      "$value": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "$description": "Only for things that spin or loop, like spinners and progress shimmer."
     }
   },
   "z": {

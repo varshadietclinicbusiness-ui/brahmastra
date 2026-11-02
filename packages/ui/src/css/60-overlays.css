@@ -1,0 +1,61 @@
+@layer astra.components {
+  /* Scrim behind dialogs */
+  .astra-overlay { position: fixed; inset: 0; z-index: 1400; display: grid; place-items: center; padding: var(--astra-space-24); background: var(--astra-color-scrim); }
+  .astra-overlay[data-entering] { animation: astra-fade var(--astra-transition-enter); }
+  .astra-overlay[data-exiting] { animation: astra-fade var(--astra-transition-exit) reverse; }
+
+  .astra-dialog { width: min(100%, 400px); max-height: calc(100dvh - var(--astra-space-48)); overflow: auto; border-radius: var(--astra-radius-overlay); background: var(--astra-color-bg-raised); box-shadow: var(--astra-shadow-modal); outline: none; }
+  .astra-dialog[data-entering] { animation: astra-dialog-in var(--astra-transition-enter); }
+  .astra-dialog[data-exiting] { animation: astra-dialog-out var(--astra-transition-exit) forwards; }
+  .astra-dialog [data-slot="dialog"] { display: grid; gap: var(--astra-space-8); padding: var(--astra-space-24); outline: none; }
+  .astra-dialog [data-slot="title"] { margin: 0; color: var(--astra-color-fg-default); font-family: var(--astra-font-family-heading); font-size: var(--astra-text-heading-sm-size); line-height: var(--astra-text-heading-sm-line-height); font-weight: var(--astra-font-weight-semibold); letter-spacing: var(--astra-text-heading-sm-tracking); }
+  .astra-dialog [data-slot="description"] { margin: 0; color: var(--astra-color-fg-muted); font-size: var(--astra-text-body-md-size); line-height: var(--astra-text-body-md-line-height); }
+  .astra-dialog [data-slot="actions"] { display: flex; justify-content: flex-end; gap: var(--astra-space-8); margin-top: var(--astra-space-16); }
+  @media (max-width: 599px) { .astra-dialog [data-slot="actions"] { flex-direction: column-reverse; } .astra-dialog [data-slot="actions"] > * { width: 100%; } }
+
+  /* Bottom sheet. React Aria's Sheet moves it with native scrolling, so it follows the finger
+     exactly; we only style the surface and let the backdrop fade along with the swipe. */
+  .astra-sheet-overlay { z-index: 1400; }
+  .astra-sheet-backdrop { background: var(--astra-color-scrim); }
+  @keyframes astra-sheet-backdrop { from { opacity: 0; } to { opacity: 1; } }
+  .astra-bottom-sheet { width: 100%; max-width: 640px; max-height: calc(100dvh - var(--astra-space-24)); border-radius: var(--astra-radius-24) var(--astra-radius-24) 0 0; background: var(--astra-color-bg-raised); box-shadow: var(--astra-shadow-modal); outline: none; }
+  .astra-bottom-sheet [data-slot="dialog"] { display: flex; flex-direction: column; max-height: inherit; outline: none; }
+  .astra-bottom-sheet [data-slot="handle"] { align-self: center; width: 36px; height: 5px; margin: var(--astra-space-8) 0 var(--astra-space-4); border-radius: var(--astra-radius-full); background: var(--astra-color-border-strong); }
+  .astra-bottom-sheet [data-slot="header"] { display: flex; align-items: center; gap: var(--astra-space-8); padding: var(--astra-space-4) var(--astra-space-12) var(--astra-space-8) var(--astra-space-20); }
+  .astra-bottom-sheet [data-slot="title"] { flex: 1; margin: 0; font-family: var(--astra-font-family-heading); font-size: var(--astra-text-heading-sm-size); line-height: var(--astra-text-heading-sm-line-height); font-weight: var(--astra-font-weight-semibold); color: var(--astra-color-fg-default); }
+  .astra-bottom-sheet [data-slot="close"] { position: relative; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 0; border-radius: var(--astra-radius-full); background: var(--astra-color-bg-sunken); color: var(--astra-color-fg-default); font-size: var(--astra-size-icon-md); cursor: pointer; }
+  .astra-bottom-sheet [data-slot="body"] { flex: 1; overflow: auto; padding: var(--astra-space-8) var(--astra-space-20) var(--astra-space-24); overscroll-behavior: contain; }
+  .astra-bottom-sheet [data-slot="footer"] { display: flex; gap: var(--astra-space-12); padding: var(--astra-space-12) var(--astra-space-16) calc(var(--astra-space-16) + env(safe-area-inset-bottom)); border-top: 1px solid var(--astra-color-border-subtle); }
+  .astra-bottom-sheet [data-slot="footer"] > :last-child { flex: 1; }
+
+  /* Popover, menu and list box */
+  .astra-popover { min-width: var(--trigger-width, 200px); max-width: min(320px, calc(100vw - var(--astra-space-32))); border-radius: var(--astra-radius-overlay); background: var(--astra-color-bg-raised); box-shadow: var(--astra-shadow-overlay); outline: none; overflow: auto; }
+  .astra-popover[data-entering] { animation: astra-pop-in var(--astra-transition-enter); }
+  .astra-popover[data-exiting] { animation: astra-pop-in var(--astra-transition-exit) reverse; }
+  .astra-menu, .astra-listbox { display: grid; padding: var(--astra-space-4); outline: none; }
+  .astra-menu-item, .astra-listbox-item { display: flex; align-items: center; gap: var(--astra-space-12); min-height: var(--astra-size-touch-target); padding: 0 var(--astra-space-12); border-radius: var(--astra-radius-overlay-inner); color: var(--astra-color-fg-default); font-size: var(--astra-text-body-md-size); cursor: pointer; outline: none; }
+  :is(.astra-menu-item, .astra-listbox-item)[data-focused] { background: var(--astra-color-bg-hover); }
+  :is(.astra-menu-item, .astra-listbox-item)[data-pressed] { background: var(--astra-color-bg-pressed); }
+  :is(.astra-menu-item, .astra-listbox-item)[data-disabled] { color: var(--astra-color-fg-disabled); cursor: not-allowed; }
+  .astra-menu-item[data-tone="danger"] { color: var(--astra-color-danger-fg); }
+  :is(.astra-menu-item, .astra-listbox-item) [data-slot="icon"] { display: inline-flex; font-size: var(--astra-size-icon-md); color: var(--astra-color-fg-muted); }
+  .astra-menu-item[data-tone="danger"] [data-slot="icon"] { color: inherit; }
+  :is(.astra-menu-item, .astra-listbox-item) [data-slot="label"] { flex: 1; }
+  .astra-menu-item [data-slot="shortcut"] { color: var(--astra-color-fg-subtle); font-size: var(--astra-text-body-sm-size); }
+  :is(.astra-menu-item, .astra-listbox-item) [data-slot="check"] { color: var(--astra-color-accent-fg); font-size: var(--astra-size-icon-md); }
+  .astra-menu .react-aria-Separator { height: 1px; margin: var(--astra-space-4) 0; background: var(--astra-color-border-subtle); }
+
+  /* Tooltip: inverse, small, quick */
+  .astra-tooltip { max-width: 240px; padding: var(--astra-space-6) var(--astra-space-12); border-radius: var(--astra-radius-8); background: var(--astra-color-bg-inverse); color: var(--astra-color-fg-inverse); font-size: var(--astra-text-body-sm-size); line-height: var(--astra-text-body-sm-line-height); box-shadow: var(--astra-shadow-overlay); }
+  .astra-tooltip [data-slot="arrow"] svg { display: block; fill: var(--astra-color-bg-inverse); }
+  .astra-tooltip[data-placement="bottom"] [data-slot="arrow"] svg { rotate: 180deg; }
+  .astra-tooltip[data-placement="left"] [data-slot="arrow"] svg { rotate: -90deg; }
+  .astra-tooltip[data-placement="right"] [data-slot="arrow"] svg { rotate: 90deg; }
+  .astra-tooltip[data-entering] { animation: astra-fade var(--astra-transition-enter); }
+  .astra-tooltip[data-exiting] { animation: astra-fade var(--astra-transition-exit) reverse; }
+
+  @keyframes astra-fade { from { opacity: 0; } }
+  @keyframes astra-dialog-in { from { opacity: 0; translate: 0 8px; scale: 0.98; } }
+  @keyframes astra-dialog-out { to { opacity: 0; translate: 0 4px; } }
+  @keyframes astra-pop-in { from { opacity: 0; scale: 0.97; } }
+}

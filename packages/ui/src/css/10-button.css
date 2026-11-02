@@ -1,0 +1,82 @@
+@layer astra.components {
+  .astra-button {
+    --_bg: var(--astra-color-accent-solid);
+    --_fg: var(--astra-color-accent-on-solid);
+    --_border: transparent;
+    --_h: var(--astra-size-control-md);
+    --_px: var(--astra-space-16);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--astra-space-8);
+    min-height: var(--_h);
+    min-width: var(--_h);
+    padding: 0 var(--_px);
+    border: var(--astra-border-width-1) solid var(--_border);
+    border-radius: var(--astra-radius-control);
+    background: var(--_bg);
+    color: var(--_fg);
+    font: inherit;
+    font-size: var(--astra-text-label-md-size);
+    line-height: var(--astra-text-label-md-line-height);
+    font-weight: var(--astra-text-label-md-weight);
+    letter-spacing: var(--astra-text-label-md-tracking);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    transition: background-color var(--astra-transition-hover), color var(--astra-transition-hover), border-color var(--astra-transition-hover), scale var(--astra-transition-press);
+  }
+  .astra-button[data-size="sm"] { --_h: var(--astra-size-control-sm); --_px: var(--astra-space-12); }
+  .astra-button[data-size="lg"] {
+    --_h: var(--astra-size-control-lg);
+    --_px: var(--astra-space-20);
+    font-size: var(--astra-text-label-lg-size);
+    line-height: var(--astra-text-label-lg-line-height);
+    letter-spacing: var(--astra-text-label-lg-tracking);
+    border-radius: var(--astra-radius-control-outer);
+  }
+  .astra-button[data-full-width] { display: flex; width: 100%; }
+
+  .astra-button[data-hovered] { --_bg: var(--astra-color-accent-solid-hover); }
+  .astra-button[data-pressed] { --_bg: var(--astra-color-accent-solid-active); scale: 0.97; }
+
+  .astra-button[data-variant="secondary"] { --_bg: var(--astra-color-accent-subtle); --_fg: var(--astra-color-accent-fg); }
+  .astra-button[data-variant="secondary"][data-hovered] { --_bg: var(--astra-color-accent-subtle-hover); }
+  .astra-button[data-variant="secondary"][data-pressed] { --_bg: var(--astra-color-bg-pressed); }
+
+  .astra-button[data-variant="outline"] { --_bg: var(--astra-color-bg-surface); --_fg: var(--astra-color-fg-default); --_border: var(--astra-color-border-default); }
+  .astra-button[data-variant="outline"][data-hovered] { --_bg: var(--astra-color-bg-hover); }
+  .astra-button[data-variant="outline"][data-pressed] { --_bg: var(--astra-color-bg-pressed); }
+
+  .astra-button[data-variant="ghost"] { --_bg: transparent; --_fg: var(--astra-color-fg-default); }
+  .astra-button[data-variant="ghost"][data-hovered] { --_bg: var(--astra-color-bg-hover); }
+  .astra-button[data-variant="ghost"][data-pressed] { --_bg: var(--astra-color-bg-pressed); }
+
+  .astra-button[data-variant="danger"] { --_bg: var(--astra-color-danger-solid); --_fg: var(--astra-color-danger-on-solid); }
+  .astra-button[data-variant="danger"][data-hovered] { --_bg: var(--astra-color-danger-solid-hover); }
+  .astra-button[data-variant="danger"][data-pressed] { --_bg: var(--astra-color-danger-solid-active); }
+
+  .astra-button[data-disabled] {
+    --_bg: var(--astra-color-bg-sunken);
+    --_fg: var(--astra-color-fg-disabled);
+    --_border: transparent;
+    cursor: not-allowed;
+  }
+  .astra-button[data-variant="ghost"][data-disabled] { --_bg: transparent; }
+
+  .astra-button [data-slot$="-icon"] { display: inline-flex; font-size: var(--astra-size-icon-md); }
+  .astra-button[data-size="sm"] [data-slot$="-icon"] { font-size: var(--astra-size-icon-sm); }
+
+  /* Loading keeps the width: the label goes invisible, the spinner sits on top. */
+  .astra-button[data-pending] { cursor: progress; }
+  .astra-button[data-pending] > [data-slot="label"],
+  .astra-button[data-pending] > [data-slot$="-icon"] { visibility: hidden; }
+  .astra-button > .astra-spinner { position: absolute; inset: 0; margin: auto; --_size: 1.25em; }
+
+  .astra-icon-button { padding: 0; width: var(--_h); }
+  .astra-icon-button [data-slot="icon"] { display: inline-flex; font-size: var(--astra-size-icon-md); }
+  .astra-icon-button[data-size="lg"] [data-slot="icon"] { font-size: var(--astra-size-icon-lg); }
+  .astra-icon-button[data-size="sm"] [data-slot="icon"] { font-size: var(--astra-size-icon-sm); }
+}

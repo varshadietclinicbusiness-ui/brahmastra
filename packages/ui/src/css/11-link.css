@@ -1,0 +1,26 @@
+@layer astra.components {
+  .astra-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--astra-space-2);
+    margin: calc(var(--astra-space-2) * -1) calc(var(--astra-space-6) * -1);
+    padding: var(--astra-space-2) var(--astra-space-6);
+    border-radius: var(--astra-radius-6);
+    color: var(--astra-color-fg-link);
+    font-size: var(--astra-text-label-lg-size);
+    line-height: var(--astra-text-label-lg-line-height);
+    font-weight: var(--astra-text-label-lg-weight);
+    letter-spacing: var(--astra-text-label-lg-tracking);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color var(--astra-transition-hover);
+  }
+  .astra-link[data-size="sm"] { font-size: var(--astra-text-label-md-size); line-height: var(--astra-text-label-md-line-height); }
+  .astra-link[data-hovered] { color: var(--astra-color-fg-default); }
+  .astra-link[data-hovered] [data-slot="label"] { text-decoration: underline; text-underline-offset: 0.2em; }
+  .astra-link[data-disabled] { color: var(--astra-color-fg-disabled); cursor: not-allowed; }
+  .astra-link [data-slot="trailing-icon"] { font-size: 1em; }
+  /* Inside running text a link is always underlined, so it isn't colour-only. */
+  :where(p, li, dd) > .astra-link [data-slot="label"] { text-decoration: underline; text-underline-offset: 0.2em; }
+}

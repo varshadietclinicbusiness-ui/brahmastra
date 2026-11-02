@@ -1,0 +1,120 @@
+@layer astra.components {
+  /* Badge */
+  .astra-badge {
+    --_bg: var(--astra-color-bg-sunken);
+    --_fg: var(--astra-color-fg-default);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--astra-space-4);
+    height: 20px;
+    padding: 0 var(--astra-space-6);
+    border-radius: var(--astra-radius-6);
+    background: var(--_bg);
+    color: var(--_fg);
+    font-size: var(--astra-text-label-sm-size);
+    line-height: var(--astra-text-label-sm-line-height);
+    font-weight: var(--astra-font-weight-semibold);
+    white-space: nowrap;
+  }
+  .astra-badge [data-slot="dot"] { width: 6px; height: 6px; border-radius: var(--astra-radius-full); background: currentColor; }
+  .astra-badge[data-tone="accent"] { --_bg: var(--astra-color-accent-subtle); --_fg: var(--astra-color-accent-fg); }
+  .astra-badge[data-tone="success"] { --_bg: var(--astra-color-success-subtle); --_fg: var(--astra-color-success-fg); }
+  .astra-badge[data-tone="warning"] { --_bg: var(--astra-color-warning-subtle); --_fg: var(--astra-color-warning-fg); }
+  .astra-badge[data-tone="danger"] { --_bg: var(--astra-color-danger-subtle); --_fg: var(--astra-color-danger-fg); }
+  .astra-badge[data-tone="info"] { --_bg: var(--astra-color-info-subtle); --_fg: var(--astra-color-info-fg); }
+  .astra-badge[data-emphasis="solid"] { --_bg: var(--astra-color-accent-solid); --_fg: var(--astra-color-accent-on-solid); }
+  .astra-badge[data-emphasis="solid"][data-tone="success"] { --_bg: var(--astra-color-success-solid); --_fg: var(--astra-color-success-on-solid); }
+  .astra-badge[data-emphasis="solid"][data-tone="warning"] { --_bg: var(--astra-color-warning-solid); --_fg: var(--astra-color-warning-on-solid); }
+  .astra-badge[data-emphasis="solid"][data-tone="danger"] { --_bg: var(--astra-color-danger-solid); --_fg: var(--astra-color-danger-on-solid); }
+  .astra-badge[data-emphasis="solid"][data-tone="info"] { --_bg: var(--astra-color-info-solid); --_fg: var(--astra-color-info-on-solid); }
+
+  /* Counter: cut out of the icon by a ring in the page colour */
+  .astra-counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 var(--astra-space-6);
+    border-radius: var(--astra-radius-full);
+    background: var(--astra-color-danger-solid);
+    color: var(--astra-color-danger-on-solid);
+    box-shadow: 0 0 0 var(--astra-border-width-strong) var(--astra-color-bg-canvas);
+    font-size: var(--astra-text-label-sm-size);
+    line-height: 1;
+    font-weight: var(--astra-font-weight-semibold);
+    font-variant-numeric: tabular-nums;
+  }
+  .astra-counter[data-type="dot"] { min-width: 8px; width: 8px; height: 8px; padding: 0; }
+
+  /* Status dot */
+  .astra-status-dot { display: inline-flex; align-items: center; gap: var(--astra-space-6); font-size: var(--astra-text-body-sm-size); color: var(--astra-color-fg-muted); }
+  .astra-status-dot [data-slot="dot"] { width: 8px; height: 8px; border-radius: var(--astra-radius-full); background: var(--astra-color-fg-subtle); }
+  .astra-status-dot[data-status="online"] [data-slot="dot"] { background: var(--astra-color-success-solid); }
+  .astra-status-dot[data-status="busy"] [data-slot="dot"] { background: var(--astra-color-danger-solid); }
+  .astra-status-dot[data-status="away"] [data-slot="dot"] { background: var(--astra-color-warning-solid); }
+
+  /* Spinner: a ring with a gap, one turn every 0.8s */
+  .astra-spinner {
+    --_size: var(--astra-size-icon-md);
+    display: inline-block;
+    width: var(--_size);
+    height: var(--_size);
+    border-radius: var(--astra-radius-full);
+    border: max(2px, calc(var(--_size) / 9)) solid currentColor;
+    border-right-color: transparent;
+    opacity: 0.9;
+    animation: astra-spin 0.8s var(--astra-easing-linear) infinite;
+  }
+  .astra-spinner[data-size="sm"] { --_size: var(--astra-size-icon-sm); }
+  .astra-spinner[data-size="lg"] { --_size: 32px; }
+  @keyframes astra-spin { to { rotate: 1turn; } }
+
+  /* Progress bar */
+  .astra-progress-bar { display: grid; gap: var(--astra-space-6); width: 100%; }
+  .astra-progress-bar [data-slot="header"] { display: flex; justify-content: space-between; gap: var(--astra-space-8); font-size: var(--astra-text-label-md-size); line-height: var(--astra-text-label-md-line-height); }
+  .astra-progress-bar [data-slot="label"] { font-weight: var(--astra-font-weight-semibold); color: var(--astra-color-fg-default); }
+  .astra-progress-bar [data-slot="value"] { color: var(--astra-color-fg-muted); font-variant-numeric: tabular-nums; }
+  .astra-progress-bar [data-slot="track"] { position: relative; height: 4px; border-radius: var(--astra-radius-full); background: var(--astra-color-border-subtle); overflow: hidden; }
+  .astra-progress-bar [data-slot="fill"] { height: 100%; border-radius: inherit; background: var(--astra-color-accent-solid); transition: width var(--astra-transition-move); }
+  .astra-progress-bar [data-complete] [data-slot="fill"] { background: var(--astra-color-success-solid); }
+  .astra-progress-bar[data-indeterminate] [data-slot="fill"] { width: 40%; animation: astra-indeterminate 1.2s var(--astra-easing-standard) infinite; }
+  @keyframes astra-indeterminate { from { translate: -100% 0; } to { translate: 250% 0; } }
+
+  /* Progress ring */
+  .astra-progress-ring { position: relative; display: inline-grid; place-items: center; color: var(--astra-color-accent-solid); }
+  .astra-progress-ring [data-slot="track"] { stroke: var(--astra-color-border-subtle); }
+  .astra-progress-ring [data-slot="fill"] { stroke: currentColor; transition: stroke-dashoffset var(--astra-transition-move); }
+  .astra-progress-ring svg[data-complete] { color: var(--astra-color-success-solid); }
+  .astra-progress-ring [data-slot="value"] { position: absolute; color: var(--astra-color-fg-default); font-size: var(--astra-text-label-sm-size); font-weight: var(--astra-font-weight-semibold); font-variant-numeric: tabular-nums; }
+
+  /* Skeleton: bg.sunken with a soft light band sweeping across */
+  .astra-skeleton {
+    display: block;
+    width: 100%;
+    height: 1em;
+    border-radius: var(--astra-radius-6);
+    background: var(--astra-color-bg-sunken) linear-gradient(90deg, transparent, var(--astra-color-white-alpha-60), transparent) no-repeat;
+    background-size: 40% 100%;
+    background-position: -40% 0;
+    animation: astra-shimmer 1.5s var(--astra-easing-linear) infinite;
+  }
+  [data-astra-mode="dark"] .astra-skeleton { background-image: linear-gradient(90deg, transparent, var(--astra-color-white-alpha-8), transparent); }
+  .astra-skeleton[data-shape="text"] { height: 0.75em; margin: 0.25em 0; }
+  .astra-skeleton[data-shape="circle"] { width: 40px; height: 40px; border-radius: var(--astra-radius-full); }
+  .astra-skeleton[data-shape="rect"] { height: 120px; border-radius: var(--astra-radius-surface); }
+  .astra-skeleton-group { display: grid; gap: var(--astra-space-4); width: 100%; }
+  @keyframes astra-shimmer { to { background-position: 140% 0; } }
+
+  /* Live indicator: a halo that breathes every 2s */
+  .astra-live-indicator { --_c: var(--astra-color-success-solid); display: inline-flex; align-items: center; gap: var(--astra-space-6); }
+  .astra-live-indicator[data-tone="live"] { --_c: var(--astra-color-danger-solid); }
+  .astra-live-indicator [data-slot="dot"] { position: relative; width: 8px; height: 8px; border-radius: var(--astra-radius-full); background: var(--_c); }
+  .astra-live-indicator [data-slot="dot"]::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--_c); opacity: 0.35; animation: astra-pulse 2s var(--astra-easing-standard) infinite; }
+  .astra-live-indicator[data-type="label"] { height: 20px; padding: 0 var(--astra-space-8); border-radius: var(--astra-radius-full); background: var(--astra-color-success-subtle); color: var(--astra-color-success-fg); font-size: var(--astra-text-label-sm-size); font-weight: var(--astra-font-weight-semibold); }
+  .astra-live-indicator[data-type="label"][data-tone="live"] { background: var(--astra-color-danger-subtle); color: var(--astra-color-danger-fg); letter-spacing: 0.06em; text-transform: uppercase; }
+  @keyframes astra-pulse { 0% { scale: 1; opacity: 0.45; } 70%, 100% { scale: 2.2; opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .astra-live-indicator [data-slot="dot"]::before, .astra-skeleton { animation: none; }
+  }
+}

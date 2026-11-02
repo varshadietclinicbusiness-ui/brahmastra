@@ -231,17 +231,29 @@
   },
   "shadow": {
     "$type": "shadow",
+    "subtle": {
+      "$value": "{shadow.xs}"
+    },
     "raised": {
-      "$value": "{shadow.soft-sm}"
+      "$value": "{shadow.sm}"
     },
     "floating": {
-      "$value": "{shadow.soft-md}"
+      "$value": "{shadow.md}"
     },
     "overlay": {
-      "$value": "{shadow.soft-lg}"
+      "$value": "{shadow.lg}"
     },
     "modal": {
-      "$value": "{shadow.soft-xl}"
+      "$value": "{shadow.xl}"
+    },
+    "drag": {
+      "$value": "{shadow.lift}"
+    },
+    "up": {
+      "$value": "{shadow.cast-up}"
+    },
+    "inset": {
+      "$value": "{shadow.well}"
     }
   }
 }

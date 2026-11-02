@@ -87,7 +87,8 @@ function tailwindName(token: TransformedToken): string | null {
     return `color-${a}-${b}`;
   }
   if (group === "radius" && token.path.length === 2) return `radius-${a}`;
-  if (group === "shadow" && ["raised", "floating", "overlay", "modal"].includes(a!)) return `shadow-${a}`;
+  if (group === "shadow" && ["subtle", "raised", "floating", "overlay", "modal", "drag", "up"].includes(a!)) return `shadow-${a}`;
+  if (group === "shadow" && a === "inset") return "inset-shadow-well";
   if (group === "font" && a === "family") return `font-${b}`;
   if (group === "easing") return `ease-${a}`;
   if (group === "text") {
